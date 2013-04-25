@@ -1,0 +1,63 @@
+#! /bin/bash
+
+time_stamp=`date +%Y%m%d_%H%M%S`
+
+function link_file {
+  source="$1"
+  target="$2"
+  if [[ -e "$target" ]] && [[ ! -L "$target" ]]; then
+    echo "Creating backup for $target: $target.$time_stamp.bak"
+    mv -f "$target" "$target.time_stamp.bak"
+  fi
+  echo "Linking $source to $target"
+  ln -sf $source $target
+}
+
+
+p=$(cd "$(dirname "$0")"; pwd)
+cd $p
+
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "Error: can't find git."
+  exit -1
+fi
+
+# Update git submodules
+echo "Updating git submodules..."
+
+git submodule init
+git submodule update
+
+# Dotfiles
+for i in _*
+do
+  source="$p/$i"
+  target="$HOME/${i/_/.}"
+  link_file "$source" "$target"
+done
+
+# Sublime Text 2
+source="$p/subl2"
+if [[ `uname` == "Darwin" ]]; then
+  test ! -e "$HOME/Library/Application Support/Sublime Text 2/Packages" && mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages"
+  target="$HOME/Library/Application Support/Sublime Text 2/Packages/User"
+else
+  test ! -e "$HOME/.config/sublime-text-2/Packages" && mkdir -p "$HOME/.config/sublime-text-2/Packages"
+  target="$HOME/.config/sublime-text-2/Packages/User"
+fi
+if [[ -e "$target" ]]; then
+  echo "Backing up old settings.."
+  mv -f "$target" "$target.$time_stamp.bak"
+fi
+echo "Restoring subl2 settings to $target"
+cp -rf "$source" "$target"
+
+# Copy my gitconfig file for gitcfg script
+source="$p/other/neson.gitconfig"
+target="$HOME/.config/gitcfg/neson.gitconfig"
+echo "Restoring neson.gitconfig"
+test ! -e "$HOME/.config/gitcfg" && mkdir -p "$HOME/.config/gitcfg"
+cp -rf "$source" "$target"
+
+
+echo "Done."

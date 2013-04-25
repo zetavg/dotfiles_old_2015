@@ -1,0 +1,64 @@
+####################################
+# neson's shell profile 2013-04-24 #
+####################################
+
+## Add `. "$HOME/.neson_profile"` to the main .profile or .bash_profile ##
+
+
+# PATH
+PATH="$HOME/.bin:$PATH"
+PATH="$HOME/.bin/script:$PATH"
+PATH="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/:$PATH"
+
+
+# ALIAS
+alias repro='source $HOME/.shell_profile'
+alias cls='cd;clear;test -e /etc/motd && cat /etc/motd;repro'
+alias bye='exit'
+
+alias l='ls -CF'
+alias ll='ls -lFh'
+if [[ `uname` == "Darwin" ]]; then
+  alias lll='ls -alFh -G | less'
+else
+   alias lll='ls -alFh --color=always | less'
+fi
+alias la='ls -alFh'
+alias lz='ls -lSrh'
+alias lt='ls -ltrh'
+alias lx='ls -lXBh'
+alias up='cd ../'
+
+alias m='more'
+alias s='less'
+
+alias sr='screen -r'
+alias scr='screen -x scr'
+alias irc='screen -x irc'
+alias startscr='screen -S scr'
+alias startirc='screen -S irc irssi'
+alias newwin='screen -X screen -t'
+alias roots='screen -X screen -t root 10 su'
+alias tops='screen -X screen -t top 9 top'
+alias ptts='screen -X screen -t BBS 8 ssh bbsu@ptt.cc'
+alias zshs='screen -X screen -t zsh zsh'
+alias vis='screen -X screen -t vim vim'
+
+alias gs='git status'
+alias gsm='git status | more'
+
+alias st='subl'
+
+alias ptt='ssh bbsu@ptt.cc'
+
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+
+# Zsh
+if [ -n "$ZSH_VERSION" ]; then
+  printf "\033[1A"
+fi

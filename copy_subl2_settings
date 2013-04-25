@@ -1,0 +1,15 @@
+#! /bin/bash
+
+target="$(dirname $0)"
+
+if [[ `uname` == "Darwin" ]]; then
+  source="$HOME/Library/Application Support/Sublime Text 2/Packages/User"
+else
+  source="$HOME/.config/sublime-text-2/Packages/User"
+fi
+
+echo "Copying from $source to $target"
+
+cp -rf "$source" "$target"
+rm -rf "$(dirname $0)/subl2"
+mv "$(dirname $0)/User" "$(dirname $0)/subl2"
