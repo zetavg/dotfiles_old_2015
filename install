@@ -7,7 +7,7 @@ function link_file {
   target="$2"
   if [[ -e "$target" ]] && [[ ! -L "$target" ]]; then
     echo "Creating backup for $target: $target.$time_stamp.bak"
-    mv -f "$target" "$target.time_stamp.bak"
+    mv -f "$target" "$target.$time_stamp.bak"
   fi
   echo "Linking $source to $target"
   ln -sf $source $target
