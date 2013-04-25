@@ -18,7 +18,7 @@ git pull
 ./install
 ```
 
-## Copy locol settings to the repo
+## Copy local settings to the repo
 
 `cd` into the local `dotfiles` repository and then:
 
