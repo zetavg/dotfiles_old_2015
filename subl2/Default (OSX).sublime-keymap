@@ -4,7 +4,7 @@
 
 	{ "keys": ["super+alt+v"], "command": "paste_and_indent" },
 
-	{ "keys": ["command+shift+s"], "command": "browser_refresh", "args": { "auto_save": true, "delay": 1.0, "activate_browser": true, "browser_name" : "all" } },
+	{ "keys": ["command+shift+a"], "command": "browser_refresh", "args": { "auto_save": true, "delay": 1.0, "activate_browser": true, "browser_name" : "all" } },
 
 	{ "keys": ["super+.", "super+b"], "command": "toggle_side_bar" },
 	{ "keys": ["super+.", "super+d"], "command": "find_under_expand_skip" },
