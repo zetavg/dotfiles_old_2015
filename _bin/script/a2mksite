@@ -59,7 +59,7 @@ else
   ErrorLog /home/$1/sites/logs/$2/error.log
   LogLevel warn
   CustomLog /home/$1/sites/logs/$2/access.log combined
-  </VirtualHost>\n" >> /etc/apache2/sites-available/$2
+</VirtualHost>\n" >> /etc/apache2/sites-available/$2
 
 	if [ -e /etc/awstats/ ]; then
 		echo "setting up awstats..."
