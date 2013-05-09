@@ -32,6 +32,8 @@ alias up='cd ../'
 alias m='more'
 alias s='less'
 
+alias j='jobs'
+
 alias sr='screen -r'
 alias scr='screen -x scr'
 alias irc='screen -x irc'
