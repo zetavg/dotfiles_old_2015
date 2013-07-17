@@ -1,11 +1,21 @@
 [
+	/* Fast switch tabs */
 	{ "keys": ["super+j"], "command": "prev_view" },
 	{ "keys": ["super+k"], "command": "next_view" },
 
+	/* Paste and Indent */
 	{ "keys": ["super+alt+v"], "command": "paste_and_indent" },
 
+	/* Fast Browser Refresh */
 	{ "keys": ["command+shift+a"], "command": "browser_refresh", "args": { "auto_save": true, "delay": 1.0, "activate_browser": true, "browser_name" : "all" } },
 
+	/* 自動對 HTML 縮排 */
+	{ "keys": ["ctrl+shift+r"], "command": "reindent" , "args": {"single_line": false} },
+
+	/* New File */
+	{ "keys": ["command+t"], "command": "new_file" },
+
+	/* Replace ⌘K with ⌘. */
 	{ "keys": ["super+.", "super+b"], "command": "toggle_side_bar" },
 	{ "keys": ["super+.", "super+d"], "command": "find_under_expand_skip" },
 	{ "keys": ["super+.", "super+u"], "command": "upper_case" },
