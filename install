@@ -22,11 +22,13 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
   exit -1
 fi
 
+
 # Update git submodules
 echo "Updating git submodules..."
 
 git submodule init
 git submodule update
+
 
 # Dotfiles
 for i in _*
@@ -35,6 +37,7 @@ do
   target="$HOME/${i/_/.}"
   link_file "$source" "$target"
 done
+
 
 # Sublime Text 2
 source="$p/subl2"
@@ -52,12 +55,31 @@ fi
 echo "Restoring subl2 settings to $target"
 cp -rf "$source" "$target"
 
-# Copy my gitconfig file for gitcfg script
-source="$p/other/neson.gitconfig"
-target="$HOME/.config/gitcfg/neson.gitconfig"
-echo "Restoring neson.gitconfig"
-test ! -e "$HOME/.config/gitcfg" && mkdir -p "$HOME/.config/gitcfg"
-cp -rf "$source" "$target"
+
+# Secret
+if [[ -e "$p/secret" ]]; then
+  echo "Copying private profiles..."
+
+  if [[ -e "$p/secret/subl2" ]]; then
+    source="$p/secret/subl2/*"
+      if [[ `uname` == "Darwin" ]]; then
+        test ! -e "$HOME/Library/Application Support/Sublime Text 2/Packages" && mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages"
+        target="$HOME/Library/Application Support/Sublime Text 2/Packages/User"
+      else
+        test ! -e "$HOME/.config/sublime-text-2/Packages" && mkdir -p "$HOME/.config/sublime-text-2/Packages"
+        target="$HOME/.config/sublime-text-2/Packages/User"
+      fi
+      cp -f $source "$target/"
+  fi
+
+  if [[ -e "$p/secret/gitcfg" ]]; then
+    source="$p/secret/gitcfg"
+    test ! -e "$HOME/.config" && mkdir -p "$HOME/.config"
+    target="$HOME/.config/gitcfg"
+    cp -rf "$source" "$target"
+  fi
+
+fi
 
 
 echo "Done."
