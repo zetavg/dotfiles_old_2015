@@ -24,15 +24,19 @@ BetterTouchTool settings, Terminal profiles and other things are in `osx/`.
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
 ```
 
+* Install the fonts in `fonts/`
+
 ### Install Private Profiles
 
 `cd` into the local `dotfiles` repository and then:
 ```bash
-git clone [private dotfiles repo]
+git clone [private dotfiles repo] secret
 ./install
 ```
 
-* Install the fonts in `fonts/`
+The Private Profiles Repository contains:
+* `secret/subl2`: Sublime Text 2 Settings
+* `secret/gitcfg`: gitcfg profiles
 
 ## Update
 
