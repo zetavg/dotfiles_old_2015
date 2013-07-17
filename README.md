@@ -13,7 +13,7 @@ Old config files are automatically backup&replaced.
 
 ### OSX
 
-BetterTouchTool Settings, Terminal profiles and other things are in `osx/`.
+BetterTouchTool settings, Terminal profiles and other things are in `osx/`.
 
 ### Sublime Text 2
 
@@ -34,9 +34,6 @@ git pull
 ./install
 ```
 
-## Copy local settings to the repo
+## 注意
 
-`cd` into the local `dotfiles` repository and then:
-
-- Sublime Text 2: `./copy_subl2_settings`
-- git: `./copy_gitcfg_settings`
+* Sublime Text 2 會自動刪去設定檔中的註解，因此若要更改 Settings 或 Key Bindings，請再 `install` 回有註解的版本後後立即更改，改完也要馬上 `cp` 回 `subl2/` 更新原始檔。
