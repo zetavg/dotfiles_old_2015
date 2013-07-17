@@ -76,6 +76,9 @@ if [[ -e "$p/secret" ]]; then
     source="$p/secret/gitcfg"
     test ! -e "$HOME/.config" && mkdir -p "$HOME/.config"
     target="$HOME/.config/gitcfg"
+    if [[ -e "$target" ]]; then
+      mv -f "$target" "$target.$time_stamp.bak"
+    fi
     cp -rf "$source" "$target"
   fi
 
