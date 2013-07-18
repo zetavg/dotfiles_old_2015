@@ -1,0 +1,9 @@
+# Focus Bindings
+bind l:cmd;shift    focus right
+bind h:cmd;shift     focus left
+bind k:cmd;shift       focus up
+bind j:cmd;shift     focus down
+bind m:cmd;shift   focus behind
+
+# Window Hints
+bind esc:cmd hint
