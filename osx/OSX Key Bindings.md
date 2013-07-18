@@ -1,9 +1,9 @@
 OSX Key Bindings
 ================
 
-# Magic Mouse
+## Magic Mouse
 
-## Global
+### Global
 
 - `Two Finger Click` → Middle-click
 - `Two Finger Swipe Right` → Previous Space
@@ -11,19 +11,19 @@ OSX Key Bindings
 - `Two Finger Swipe Up` → Mission Control
 - `Two Finger Swipe Down` → Application Expose
 
-## Google Chrome
+### Google Chrome
 
 - `Three Finger Click` → `⌘I` [Evernote Clearly]
 
 - - -
 
-# Trackpad
+## Trackpad
 
-## Global
+### Global
 
 - `Four Finger Tap` → Middle-click
 
-## Google Chrome
+### Google Chrome
 
 - `Three Finger Click` → `⌘I` [Evernote Clearly]
 - `Four Finger Click` → `⌘R` [Refresh]
@@ -32,24 +32,24 @@ OSX Key Bindings
 
 # Keyboard
 
-## Global
+### Global
 
-### System
+#### System
 
 - `⌥↩` → Launch openZshTerminal.app [Open new Terminal]
 - `⌘⌥⌃L` → Launch macLockScreen.app [Lock screen]
 - `⌘⇧⌥L` → Sleep Display
 
-### Window Management
+#### Window Management
 
-#### `⌃`: Move Space
+##### `⌃`: Move Space
 - `⌃J` → `⌃←` [Previous Space]
 - `⌃K` → `⌃→` [Next Space]
 - `⌃⇧J` → Move focused window to previous space  # SizeUp
 - `⌃⇧K` → Move focused window to next space  # SizeUp
 
 
-#### `⇧⌥`: Move Window
+##### `⇧⌥`: Move Window
 - `⇧⌥H` → Maximize Window Left
 - `⇧⌥L` → Maximize Window Right
 - `⇧⌥J` → Maximize window to bottom
@@ -58,36 +58,36 @@ OSX Key Bindings
 - `⇧⌥I` → Restore old window size
 - `⇧⌥Y` → Resize window to top left quarter
 - `⇧⌥N` → Resize window to bottom left quarter
-- `￼￼￼￼￼⇧⌥O` → Resize window to top right quarter
-- `￼￼￼￼￼⇧⌥.` → Resize window to bottom right quarter
-- `￼￼￼￼￼⇧⌥P` → Move Window to Next Monitor  # SizeUp
+- `⇧⌥O` → Resize window to top right quarter
+- `⇧⌥.` → Resize window to bottom right quarter
+- `⇧⌥P` → Move Window to Next Monitor  # SizeUp
 
 
-#### `⇧⌘`: Focus Window
-- `￼￼￼￼￼⇧⌘H` → Focus window on the right  # Slate
-- `￼￼￼￼￼⇧⌘J` → Focus window on the bottom  # Slate
-- `￼￼￼￼￼⇧⌘K` → Focus window on the top  # Slate
-- `￼￼￼￼￼⇧⌘L` → Focus window on the left  # Slate
-- `￼￼￼￼￼⇧⌘M` → Focus window behind  # Slate
-- `￼￼￼￼￼⌘⎋` → Select window  # Slate
+##### `⇧⌘`: Focus Window
+- `⇧⌘H` → Focus window on the right  # Slate
+- `⇧⌘J` → Focus window on the bottom  # Slate
+- `⇧⌘K` → Focus window on the top  # Slate
+- `⇧⌘L` → Focus window on the left  # Slate
+- `⇧⌘M` → Focus window behind  # Slate
+- `⌘⎋` → Select window  # Slate
 
-#### `⌘⌃`: GoTo/Other
+##### `⌘⌃`: GoTo/Other
 - `⌘⌃F` → Enter fullscrene
-- `￼￼￼￼￼⌘⌃T` → `⌘⌃A` [Keep Afloat]  # Afloat
+- `⌘⌃T` → `⌘⌃A` [Keep Afloat]  # Afloat
 - `⌘⌃X` → Go to Terminal
 - `⌘⌃S` → Go to Sublime Text
 - `⌘⌃W` → Go to Google Chrome
 - `⌘⌃M` → Go to iTunes
 - `⌘⌃N` → Evernote Quick Note  # Evernote
 
-### Text Edit
+#### Text Edit
 
 - `⇧⌫` → `fn ⌦` [Del]
 - `⌥,` → `⇧⌥B`
 - `⌘⇧C` → Search selected text with Google
 - `⌘⇧V` → Super Paste  # Flycut
 
-### For Traditional Keyboards
+#### For Traditional Keyboards
 
 - `F13` → `⌘⇧3` [Print Screen]
 - `F4` → Show Dashboard
@@ -100,13 +100,13 @@ OSX Key Bindings
 - `F12` → Volume Up
 
 
-## Finder
+### Finder
 
 - `⌘↩` → `⌘↓`
 - `⌘⇧⌥⌃P` → Show / Hide Dot-files in Finder
 
 
-## Google Chrome
+### Google Chrome
 
 - `F5` → `⌘R` [Refresh page]
 - `⌘J` → `⌘⌥←` [Next tag]
@@ -115,7 +115,7 @@ OSX Key Bindings
 - `⌘U` → Evernote Clearly/Save to Evernote
 
 
-## Sublime Text
+### Sublime Text
 
 - `⌘J` → Next tag  # Sublime Text
 - `⌘K` → Previous tag  # Sublime Text
@@ -125,27 +125,27 @@ OSX Key Bindings
 - `⌘., ⌘L` → Lower Case  # Sublime Text
 
 
-## iChat
+### iChat
 
 - `⇧↩` → `⌃↩` [Newline]
 - `⌘J` → `⌃⇥` [Next]
 - `⌘K` → `⇧⌃⇥` [Previous]
 
 
-## Terminal
+### Terminal
 
 - `⌘J` → `⌘⇧[` [Next]
 - `⌘K` → `⌘⇧]` [Previous]
 - `⌘L` → Launch Pro2XL.terminal
 
 
-## Droplr
+### Droplr
 
 - `⇧⌘R` → Capture Screenshot  # Droplr
 
 - - -
 
-# Leap Motion
+## Leap Motion
 
 * Not yet
 
