@@ -43,8 +43,8 @@ OSX Key Bindings
 ### Window Management
 
 #### `⌃`: Move Space
-- `⌃J` → ⌃← [Previous Space]
-- `⌃K` → ⌃→ [Next Space]
+- `⌃J` → `⌃←` [Previous Space]
+- `⌃K` → `⌃→` [Next Space]
 - `⌃⇧J` → Move focused window to previous space  # SizeUp
 - `⌃⇧K` → Move focused window to next space  # SizeUp
 
@@ -119,7 +119,7 @@ OSX Key Bindings
 
 - `⌘J` → Next tag  # Sublime Text
 - `⌘K` → Previous tag  # Sublime Text
-- `⌘⌥V` → paste and Indent  # Sublime Text
+- `⌘⌥V` → Paste and Indent  # Sublime Text
 - `⌘., ⌘B` → Show Side Bar  # Sublime Text
 - `⌘., ⌘U` → Upper Case  # Sublime Text
 - `⌘., ⌘L` → Lower Case  # Sublime Text
