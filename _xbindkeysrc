@@ -45,5 +45,35 @@
     m:0x40 + c:48
     Mod4 + apostrophe 
 
+#Paste
+"xte 'keyup Alt_L' 'keyup v'; if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keydown Control_L' 'key v' 'keyup Control_L'; else xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'; fi; xte 'keydown Alt_L'"
+    m:0x8 + c:55
+    Alt + v 
+
+#Copy
+"xte 'keyup Alt_L' 'keyup c'; if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keydown Control_L' 'key c'  'keyup Control_L'; else xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'; fi; xte 'keydown Alt_L'"
+    m:0x8 + c:54
+    Alt + c 
+
+#Cut
+"xte 'keyup Alt_L' 'keyup x'; if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keydown Control_L' 'key x' 'keyup Control_L'; else xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'; fi; xte 'keydown Alt_L'"
+    m:0x8 + c:53
+    Alt + x 
+
+#Alt BackSpace
+"xte 'keyup Alt_L' 'keyup BackSpace' 'keydown Control_L' 'key BackSpace' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:22
+    Alt + BackSpace 
+
+#Undo
+"xte 'keyup Alt_L' 'keyup z' 'keydown Control_L' 'key z' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:52
+    Alt + z 
+
+#Redo
+"xte 'keyup Alt_L' 'keyup z' 'keydown Control_L' 'key z' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x9 + c:52
+    Shift+Alt + z 
+
 #
 # End of xbindkeys configuration
