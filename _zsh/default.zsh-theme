@@ -77,7 +77,7 @@ function display_rvm_status() {
 function display_group_status() {
 
   current_group=$(groups | sed 's/ .*//g')
-  if [[ $current_group != $USER && $current_group != "staff" ]]; then
+  if [[ $current_group != $USER && $current_group != "staff" && $current_group != "users" ]]; then
     echo ":$current_group"
   fi
 }
