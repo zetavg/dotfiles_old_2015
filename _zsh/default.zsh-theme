@@ -84,7 +84,7 @@ function display_group_status() {
 
 
 PROMPT='
-%{$FG[025]%}[%{$reset_color%}%{$FG[white]%}%~%{$FG[025]%}]%{$reset_color%} %(?..%{$FG[red]%}! )%{$reset_color%}%{$FG[white]%}%n%{$FG[130]%}$(display_group_status)%{$reset_color%}@%M %{$FG[052]%}$(display_rvm_status)%{$reset_color%}%{$FG[234]%}- %D %*%{$reset_color%}
+%{$FG[025]%}[%{$reset_color%}%{$FG[white]%}%~%{$FG[025]%}]%{$reset_color%} %(?..%{$fg[red]%}! )%{$reset_color%}%{$FG[white]%}%n%{$FG[130]%}$(display_group_status)%{$reset_color%}@%M %{$FG[052]%}$(display_rvm_status)%{$reset_color%}%{$FG[234]%}- %D %*%{$reset_color%}
  %(!.#.$)%{$reset_color%} '
 RPROMPT='%{$FG[008]%}%p $(display_git_status) `git config --get user.name`%{$reset_color%}'
 
