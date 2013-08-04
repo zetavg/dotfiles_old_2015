@@ -1,0 +1,80 @@
+// ==UserScript==
+// @ShortcutManager
+// @name Select the left tab
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+j
+// @include *
+// @execute SelectLeftTab([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Select the right tab
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+k
+// @include *
+// @execute SelectRightTab([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Reload (Cacheless)
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+r
+// @include *
+// @execute CachelessReload([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Open "http://dex.tw" in a new tab
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+t
+// @include *
+// @execute OpenAPage(["http://dex.tw"])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Close the current tab
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+w
+// @include *
+// @execute CloseTab([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Close right tabs
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+l Alt+w
+// @include *
+// @execute CloseRightTabs([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Close left tabs
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+h Alt+w
+// @include *
+// @execute CloseLeftTabs([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Close the current window
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+Shift+w
+// @include *
+// @execute CloseWindow([])
+// ==/UserScript==
+
+// ==UserScript==
+// @ShortcutManager
+// @name Open a new window
+// @namespace ZUHgQSe4aCRJ
+// @key Alt+n
+// @include *
+// @execute OpenNewWindow([])
+// ==/UserScript==

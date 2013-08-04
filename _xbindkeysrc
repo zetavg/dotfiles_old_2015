@@ -1,0 +1,106 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 0.1.3
+#
+# If you edit this, do not forget to uncomment any lines that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier (on my keyboard):
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+# Another way to specifie a key is to use 'xev' and set the
+# keycode with c:nnn or the modifier with m:nnn where nnn is
+# the keycode or the state returned by xev
+#
+# This file is created by xbindkey_config
+# The structure is :
+# # Remark
+# "command"
+# m:xxx + c:xxx
+# Shift+...
+
+# Requires xautomation
+
+
+
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+
+
+#Google Chrome
+"google-chrome"
+    m:0x40 + c:47
+    Mod4 + semicolon
+
+#Thunar
+"thunar"
+    m:0x40 + c:48
+    Mod4 + apostrophe
+
+#Cut
+"xte 'keyup Alt_L' 'keyup x'; if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keydown Control_L' 'key x' 'keyup Control_L'; else xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'; fi; xte 'keydown Alt_L'"
+    m:0x8 + c:53
+    Alt + x
+
+#Copy
+"xte 'keyup Alt_L' 'keyup c'; if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keydown Control_L' 'key c'  'keyup Control_L'; else xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'; fi; xte 'keydown Alt_L'"
+    m:0x8 + c:54
+    Alt + c
+
+#Paste
+"xte 'keyup Alt_L' 'keyup v'; if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keydown Control_L' 'key v' 'keyup Control_L'; else xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'; fi; xte 'keydown Alt_L'"
+    m:0x8 + c:55
+    Alt + v
+
+#Undo
+"xte 'keyup Alt_L' 'keyup z' 'keydown Control_L' 'key z' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:52
+    Alt + z
+
+#Redo
+"xte 'keyup Alt_L' 'keyup z' 'keydown Control_L' 'key z' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x9 + c:52
+    Shift+Alt + z
+
+#Select All
+"xte 'keyup Alt_L' 'keyup a' 'keydown Control_L' 'key a' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:38
+    Alt + a
+
+#Find
+"xte 'keyup Alt_L' 'keyup f' 'keydown Control_L' 'key f' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:41
+    Alt + f
+
+#Save
+"xte 'keyup Alt_L' 'keyup s' 'keydown Control_L' 'key s' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:39
+    Alt + s
+
+#Swich Input Method
+"xte 'keyup Alt_L' 'keyup Space' 'keydown Control_L' 'key Space' 'keyup Control_L' 'keydown Alt_L'"
+    m:0x8 + c:65
+    Alt + space
+
+#Awesome Close Window
+"xte 'keyup q' 'keydown Shift_L' 'key c' 'keyup Shift_L'"
+    m:0x40 + c:24
+    Mod4 + q
+
+#Alt BackSpace
+"if [ $(xprop awk -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) WM_CLASS | grep -i -c "terminal") -eq "0" ]; then xte 'keyup BackSpace' 'keyup Alt_L' 'keydown Control_L' 'key BackSpace' 'keyup Control_L' 'keydown Alt_L'; else xte 'key x'; fi;"
+    m:0x8 + c:22
+    Alt + BackSpace
+
+#
+# End of xbindkeys configuration
