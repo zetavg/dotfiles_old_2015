@@ -103,6 +103,11 @@ PROMPT='
  %(!.#.$)%{$reset_color%} '
 RPROMPT='%{$FG[008]%}%p $(display_git_status) `git config --get user.name`%{$reset_color%}'
 
+TMOUT=1
+TRAPALRM() {
+  zle reset-prompt
+}
+
 
 # See http://geoff.greer.fm/lscolors/
 export LSCOLORS="exfxcxdxbxbxbxbxbxbxbx"
