@@ -69,7 +69,7 @@ function display_rvm_status() {
 
   if [[ -s "$HOME/.rvm" ]]; then
     rvm_current_ruby=`$HOME/.rvm/bin/rvm-prompt`
-    [[ $(rvm list default | grep -c $rvm_current_ruby) == 0 ]] && echo "$(sed 's/^ruby-//g' <<< $rvm_current_ruby) "
+    [[ $(rvm list default | grep -c $rvm_current_ruby) == 0 ]] && echo "♦ $(sed 's/^ruby-//g' <<< $rvm_current_ruby) "
   fi
 }
 
@@ -83,8 +83,23 @@ function display_group_status() {
 }
 
 
+function get_hostname() {
+  if [[ `uname` == "Darwin" ]]; then
+    my_hostname="%{$FG[151]%}$(scutil --get ComputerName | sed "s/MacBook Pro /MBP/g" | sed "s/MacBook Air /MBA/g" | sed "s/ 的 /'s_/g")%{$reset_color%}"
+  else
+    my_hostname=$(hostname)
+  fi
+}; get_hostname
+
+
+function display_hostname() {
+
+  echo $my_hostname
+}
+
+
 PROMPT='
-%{$FG[025]%}[%{$reset_color%}%{$FG[white]%}%~%{$FG[025]%}]%{$reset_color%} %(?..%{$fg[red]%}! )%{$reset_color%}%{$FG[white]%}%n%{$FG[130]%}$(display_group_status)%{$reset_color%}@%M %{$FG[052]%}$(display_rvm_status)%{$reset_color%}%{$FG[234]%}- %D %*%{$reset_color%}
+%{$FG[025]%}[%{$reset_color%}%{$FG[white]%}%~%{$FG[025]%}]%{$reset_color%} %(?..%{$fg[red]%}! )%{$reset_color%}%{$FG[white]%}%n%{$FG[130]%}$(display_group_status)%{$reset_color%}@$(display_hostname) %{$FG[052]%}$(display_rvm_status)%{$reset_color%}%{$FG[234]%}- %D %*%{$reset_color%}
  %(!.#.$)%{$reset_color%} '
 RPROMPT='%{$FG[008]%}%p $(display_git_status) `git config --get user.name`%{$reset_color%}'
 
