@@ -85,7 +85,7 @@ function display_group_status() {
 
 function get_hostname() {
   if [[ `uname` == "Darwin" ]]; then
-    my_hostname="%{$FG[151]%}$(scutil --get ComputerName | sed "s/MacBook Pro /MBP/g" | sed "s/MacBook Air /MBA/g" | sed "s/ 的 /'s_/g")%{$reset_color%}"
+    my_hostname="%{$FG[151]%}$(scutil --get ComputerName | sed "s/MacBook Pro /MBP/g" | sed "s/MacBook Air /MBA/g" | sed "s/ 的 /'s_/g" | sed "s/${USER}'s_//g")%{$reset_color%}"
   else
     my_hostname=$(hostname)
   fi
