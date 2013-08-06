@@ -1,5 +1,5 @@
 ####################################
-# neson's shell profile 2013-04-24 #
+# neson's shell profile 2013-08-07 #
 ####################################
 
 ## Add `. "$HOME/.neson_profile"` to the main .profile or .bash_profile ##
@@ -64,7 +64,7 @@ alias ptt='ssh bbsu@ptt.cc'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
-# Zsh
+# ZSH
 if [ -n "$ZSH_VERSION" ]; then
   printf "\033[1A"
 fi
