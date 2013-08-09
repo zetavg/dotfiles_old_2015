@@ -55,6 +55,8 @@ alias gsm='git status | more'
 
 alias st='subl'
 
+alias geeknote='python $HOME/.bin/geeknote/geeknote.py'
+
 alias ptt='ssh bbsu@ptt.cc'
 
 

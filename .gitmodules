@@ -7,3 +7,6 @@
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "_bin/geeknote"]
+	path = _bin/geeknote
+	url = git://github.com/VitaliyRodnenko/geeknote.git
