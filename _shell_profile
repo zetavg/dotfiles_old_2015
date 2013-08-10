@@ -56,6 +56,7 @@ alias gsm='git status | more'
 alias st='subl'
 
 alias geeknote='python $HOME/.bin/geeknote/geeknote.py'
+alias gnsync='python $HOME/.bin/geeknote/gnsync.py'
 
 alias ptt='ssh bbsu@ptt.cc'
 
@@ -64,6 +65,18 @@ alias ptt='ssh bbsu@ptt.cc'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+
+# OSX
+if [[ `uname` == "Darwin" ]]; then
+  function mou() {
+    set -m
+    /Applications/Mou.app/Contents/MacOS/mou $1 &
+    sleep 1
+    osascript -e "tell app \"mou\" to activate"
+    fg %+
+  }
+fi
 
 
 # ZSH
