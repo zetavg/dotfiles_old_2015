@@ -38,7 +38,7 @@ OSX Key Bindings
 
 - `⌥↩` → Launch openZshTerminal.app [Open new Terminal]
 - `⌘⌥⌃L` → Launch macLockScreen.app [Lock screen]
-- `⌘⇧⌥L` → Sleep Display
+- `⌘⇧⌥;` → Sleep Display
 
 #### Window Management
 
@@ -49,7 +49,7 @@ OSX Key Bindings
 - `⌃⇧K` → Move focused window to next space  # SizeUp
 
 
-##### `⇧⌥`: Move Window
+##### `⇧⌥`: Set Window Position
 - `⇧⌥H` → Maximize Window Left
 - `⇧⌥L` → Maximize Window Right
 - `⇧⌥J` → Maximize window to bottom
@@ -61,6 +61,17 @@ OSX Key Bindings
 - `⇧⌥O` → Resize window to top right quarter
 - `⇧⌥.` → Resize window to bottom right quarter
 - `⇧⌥P` → Move Window to Next Monitor  # SizeUp
+
+
+##### `⇧⌥⌘`: Move/Resize Window
+- `⇧⌥⌘J` → Move Window Down  # Slate
+- `⇧⌥⌘K` → Move Window Up  # Slate
+- `⇧⌥⌘H` → Move Window Left  # Slate
+- `⇧⌥⌘L` → Move Window Right  # Slate
+- `⇧⌥⌘M` → Increase Window Height  # Slate
+- `⇧⌥⌘,` → Decrease Window Height  # Slate
+- `⇧⌥⌘N` → Decrease Window Width  # Slate
+- `⇧⌥⌘.` → Increase Window Width  # Slate
 
 
 ##### `⇧⌘`: Focus Window
