@@ -67,6 +67,18 @@ alias ptt='ssh bbsu@ptt.cc'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
+# FUNCTION
+function sd() {
+  echo $(pwd) > $HOME/.sd_$1
+}
+function rd() {
+  [[ -s "$HOME/.sd_$1" ]] && cd $(cat $HOME/.sd_$1)
+}
+function csd() {
+  rm $HOME/.sd_*
+}
+
+
 # OSX
 if [[ `uname` == "Darwin" ]]; then
   function mou() {
