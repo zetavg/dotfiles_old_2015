@@ -68,14 +68,14 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
 # FUNCTION
-function sd() {
-  echo $(pwd) > $HOME/.sd_$1
+function scd() {
+  echo $(pwd) > $HOME/.scd_$1
 }
-function rd() {
-  [[ -s "$HOME/.sd_$1" ]] && cd $(cat $HOME/.sd_$1)
+function rcd() {
+  [[ -s "$HOME/.scd_$1" ]] && cd $(cat $HOME/.scd_$1)
 }
-function csd() {
-  rm $HOME/.sd_*
+function cscd() {
+  rm $HOME/.scd_*
 }
 
 
