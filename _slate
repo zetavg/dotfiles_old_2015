@@ -4,7 +4,6 @@ bind h:cmd;shift     focus left
 bind k:cmd;shift       focus up
 bind j:cmd;shift     focus down
 bind m:cmd;shift   focus behind
-bind n:cmd;shift   focus behind
 
 # Move/Resize Window
 bind j:cmd;shift;alt	move windowTopLeftX;windowTopLeftY+20 windowSizeX;windowSizeY

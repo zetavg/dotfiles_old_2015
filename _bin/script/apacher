@@ -1,0 +1,51 @@
+#! /bin/bash
+# apacher - Get sites up with Powder on OS X
+# Usage: apacher [link|unlink]
+#
+# Must have pow + powder first
+#
+
+if [[ "$1" == "link" ]]; then
+	sudo ln -s $(pwd) /Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')
+	echo 'require "net/http"
+
+class ProxyApp
+  def call(env)
+    begin
+      request = Rack::Request.new(env)
+      headers = {}
+      dir = ""
+      env.each do |key, value|
+        if key =~ /^http_(.*)/i
+          headers[$1] = value
+        end
+
+        if key == "HTTP_HOST"
+          dir = value.chomp(".dev")
+        end
+
+      end
+      http = Net::HTTP.new("localhost", 8080)
+      http.start do |http|
+        response = http.send_request(request.request_method, "/" + dir + "/" + request.fullpath, request.body.read, headers)
+        [response.code, response.to_hash, [response.body]]
+      end
+      rescue Errno::ECONNREFUSED
+      [500, {}, ["Server is down, try $ sudo apachectl start"]]
+    end
+  end
+end
+
+run ProxyApp.new' > 'config.ru'
+	powder link
+elif [[ "$1" == "unlink" ]]; then
+	powder unlink
+	rm config.ru
+	sudo rm /Library/WebServer/Documents/sudo rm /Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')
+else
+	echo "apacher - Get sites up with Powder on OS X
+Usage: apacher [link|unlink]
+Must have pow + powder first"
+	exit -1
+fi
+
