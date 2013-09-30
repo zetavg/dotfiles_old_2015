@@ -6,7 +6,7 @@
 #
 
 if [[ "$1" == "link" ]]; then
-	sudo ln -s $(pwd) /Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')
+	sudo ln -s "$(pwd)" "/Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')"
 	echo 'require "net/http"
 
 class ProxyApp
@@ -41,7 +41,7 @@ run ProxyApp.new' > 'config.ru'
 elif [[ "$1" == "unlink" ]]; then
 	powder unlink
 	rm config.ru
-	sudo rm /Library/WebServer/Documents/sudo rm /Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')
+	sudo rm "/Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')"
 else
 	echo "apacher - Get sites up with Powder on OS X
 Usage: apacher [link|unlink]
