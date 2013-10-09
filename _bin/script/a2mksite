@@ -1,20 +1,20 @@
 #! /bin/bash
 # a2mksite
 # Creates visual host for apache2 automatically, including awstats config file.
-# usage: a2mksite [UserName] [SiteDomain]
+# usage: a2mksite UserName SiteDomain
 # by Neson 2013/5
 #
 # for Apache2(apache2-mpm-itk, AssignUserId) on Debian 6/7.
 #
 # locations:
-# Site: ~[UserName]/site/[SiteDomain]/
-# Site logs: ~[UserName]/site/log/[SiteDomain]/
-# Apache2 config: /etc/apache2/sites-available/[SiteDomain]
-# AWStats config: /etc/awstats/awstats.[SiteDomain].conf
+# Site: ~UserName/site/SiteDomain/
+# Site logs: ~UserName/site/log/SiteDomain/
+# Apache2 config: /etc/apache2/sites-available/SiteDomain
+# AWStats config: /etc/awstats/awstats.SiteDomain.conf
 #
 # notice: you might need to set file permissions manually using chmod or
-# `setfacl -R -m u:www-data:rwx [directoryName] # add acl permissions for www-data to all the files in the directory`
-# `setfacl -R -m d:u:www-data:rwx [directoryName] # and files added in the future too`
+# `setfacl -R -m u:www-data:rwx directoryName # add acl permissions for www-data to all the files in the directory`
+# `setfacl -R -m d:u:www-data:rwx directoryName # and files added in the future too`
 #
 
 if [ "$1" == "" ] || [ "$2" == "" ]; then
