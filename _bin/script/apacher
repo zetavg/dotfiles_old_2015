@@ -1,51 +1,93 @@
 #! /bin/bash
-# apacher - Get sites up with Powder on OS X
-# Usage: apacher [link|unlink]
-#
-# Must have pow + powder first
+# apacher - Get website up on OS X
+# Usage: apacher link|unlink
 #
 
+if [[ `uname` != "Darwin" ]]; then
+  echo "Sorry, apacher runs only on Mac."
+  exit -1
+else
+  sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak
+  sudo sh -c 'sed "s/#Include \/private\/etc\/apache2\/extra\/httpd-vhosts.conf/Include \/private\/etc\/apache2\/extra\/httpd-vhosts.conf/g" /etc/apache2/httpd.conf.bak > /etc/apache2/httpd.conf'
+  sudo sh -c 'sed "s/#LoadModule php5_module libexec\/apache2\/libphp5.so/LoadModule php5_module libexec\/apache2\/libphp5.so/g" /etc/apache2/httpd.conf.bak > /etc/apache2/httpd.conf'
+  if [[ ! -d /etc/apache2/extra/vhosts ]]; then
+    sudo mkdir -p /etc/apache2/extra/vhosts
+    sudo mv /etc/apache2/extra/httpd-vhosts.conf /etc/apache2/extra/httpd-vhosts.conf.bak
+    sudo sh -c "sed '19a\ 
+,Listen 8080,NameVirtualHost *:8080,,Include /private/etc/apache2/extra/vhosts/*.conf,' /etc/apache2/extra/httpd-vhosts.conf.bak > /etc/apache2/extra/httpd-vhosts.conf.bak2"
+    sudo sh -c "cat /etc/apache2/extra/httpd-vhosts.conf.bak2 | tr ',' '\012' > /etc/apache2/extra/httpd-vhosts.conf"
+  fi
+fi
+
+site_name="$(basename $(pwd) | tr '[:upper:]' '[:lower:]' | sed -e 's/_/-/g')"
+
 if [[ "$1" == "link" ]]; then
-	sudo ln -s "$(pwd)" "/Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')"
-	echo 'require "net/http"
+  mkdir -p $(pwd)/tmp/log
+  touch $(pwd)/tmp/log/error.log
+  touch $(pwd)/tmp/log/access.log
+  sudo sh -c "printf '<VirtualHost *:80 *:8080>
+    ServerAdmin webmaster@$site_name.dev
+    DocumentRoot \"$(pwd)\"
+    ServerName $site_name.dev
+    ErrorLog \"$(pwd)/tmp/log/error.log\"
+    CustomLog \"$(pwd)/tmp/log/access.log\" common
+    <Directory \"$(pwd)\">
+        SetEnv downgrade-1.0 true
+        SetEnv force-response-1.0 true
+        Options Indexes MultiViews FollowSymLinks ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>' > /private/etc/apache2/extra/vhosts/$site_name.dev.conf"
+  sudo sh -c "printf '\n127.0.0.1 $site_name.dev' >> /etc/hosts"
+  sudo apachectl restart
+  if [[ -d ~/.pow ]]; then
+    ln -s $(pwd) ~/.pow
+    echo "require \"net/http\"
 
 class ProxyApp
   def call(env)
     begin
       request = Rack::Request.new(env)
       headers = {}
-      dir = ""
+      dir = \"\"
       env.each do |key, value|
         if key =~ /^http_(.*)/i
-          headers[$1] = value
+          headers[\$1] = value
         end
 
-        if key == "HTTP_HOST"
-          dir = value.chomp(".dev")
+        if key == \"HTTP_HOST\"
+          dir = value.chomp(\".dev\")
         end
 
       end
-      http = Net::HTTP.new("localhost", 8080)
+      http = Net::HTTP.new(\"$site_name.dev\", 8080)
       http.start do |http|
-        response = http.send_request(request.request_method, "/" + dir + "/" + request.fullpath, request.body.read, headers)
+        response = http.send_request(request.request_method, \"/\" + dir + \"/\" + request.fullpath, request.body.read, headers)
         [response.code, response.to_hash, [response.body]]
       end
       rescue Errno::ECONNREFUSED
-      [500, {}, ["Server is down, try $ sudo apachectl start"]]
+      [500, {}, [\"Server is down, try $ sudo apachectl start\"]]
     end
   end
 end
 
-run ProxyApp.new' > 'config.ru'
-	powder link
-elif [[ "$1" == "unlink" ]]; then
-	powder unlink
-	rm config.ru
-	sudo rm "/Library/WebServer/Documents/$(basename $(pwd) | tr '[:upper:]' '[:lower:]')"
-else
-	echo "apacher - Get sites up with Powder on OS X
-Usage: apacher [link|unlink]
-Must have pow + powder first"
-	exit -1
-fi
+run ProxyApp.new" > 'config.ru'
+  fi
+  echo "Your site is now available at http://$site_name.dev/"
 
+elif [[ "$1" == "unlink" ]]; then
+  sudo rm "/private/etc/apache2/extra/vhosts/$site_name.dev.conf"
+  sudo mv /etc/hosts /etc/hosts.bak
+  sudo sh -c "sed '/127.0.0.1 $site_name.dev/d' /etc/hosts.bak > /etc/hosts"
+  sudo apachectl restart
+  rm -f config.ru
+  rm -f ~/.pow/$(basename $(pwd))
+  echo "Successfully removed http://$site_name.dev/"
+
+else
+  echo "apacher - Get website up on OS X
+Usage: apacher link|unlink"
+  exit -1
+fi
