@@ -43,7 +43,7 @@ if [[ "$1" == "link" ]]; then
   sudo sh -c "printf '\n127.0.0.1 $site_name.dev' >> /etc/hosts"
   sudo apachectl restart
   if [[ -d ~/.pow ]]; then
-    ln -s $(pwd) ~/.pow
+    ln -s $(pwd) ~/.pow/$site_name
     echo "require \"net/http\"
 
 class ProxyApp
@@ -64,7 +64,7 @@ class ProxyApp
       end
       http = Net::HTTP.new(\"$site_name.dev\", 8080)
       http.start do |http|
-        response = http.send_request(request.request_method, \"/\" + dir + \"/\" + request.fullpath, request.body.read, headers)
+        response = http.send_request(request.request_method, request.fullpath, request.body.read, headers)
         [response.code, response.to_hash, [response.body]]
       end
       rescue Errno::ECONNREFUSED
@@ -83,7 +83,7 @@ elif [[ "$1" == "unlink" ]]; then
   sudo sh -c "sed '/127.0.0.1 $site_name.dev/d' /etc/hosts.bak > /etc/hosts"
   sudo apachectl restart
   rm -f config.ru
-  rm -f ~/.pow/$(basename $(pwd))
+  rm -f ~/.pow/$site_name
   echo "Successfully removed http://$site_name.dev/"
 
 else
