@@ -158,7 +158,10 @@ OSX Key Bindings
 
 ## Leap Motion
 
-* Not yet
+* `Five Finger Up` → Mission Control 
+* `Five Finger Down` → Application Expose
+* `Five Finger Left` → Move right a space
+* `Five Finger Right` → Move left a space
 
 - - -
 
