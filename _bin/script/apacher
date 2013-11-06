@@ -13,7 +13,7 @@ else
   if [[ ! -d /etc/apache2/extra/vhosts ]]; then
     sudo mkdir -p /etc/apache2/extra/vhosts
     sudo mv /etc/apache2/extra/httpd-vhosts.conf /etc/apache2/extra/httpd-vhosts.conf.bak
-    sudo sh -c "sed '19a\ 
+    sudo sh -c "sed '19a\
 ,Listen 8080,NameVirtualHost *:8080,,Include /private/etc/apache2/extra/vhosts/*.conf,' /etc/apache2/extra/httpd-vhosts.conf.bak > /etc/apache2/extra/httpd-vhosts.conf.bak2"
     sudo sh -c "cat /etc/apache2/extra/httpd-vhosts.conf.bak2 | tr ',' '\012' > /etc/apache2/extra/httpd-vhosts.conf"
   fi
@@ -40,6 +40,21 @@ if [[ "$1" == "link" ]]; then
         Allow from all
     </Directory>
 </VirtualHost>' > /private/etc/apache2/extra/vhosts/$site_name.dev.conf"
+  sudo sh -c "printf '<VirtualHost *:80 *:8080>
+    ServerAdmin webmaster@$site_name.dev
+    DocumentRoot \"$(pwd)\"
+    ServerName $site_name.dev
+    ErrorLog \"$(pwd)/tmp/log/error.log\"
+    CustomLog \"$(pwd)/tmp/log/access.log\" common
+    <Directory \"$(pwd)\">
+        SetEnv downgrade-1.0 true
+        SetEnv force-response-1.0 true
+        Options Indexes MultiViews FollowSymLinks ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>' > /Library/Server/Web/Config/apache2/sites/$site_name.dev.conf"  # For Server.app
   sudo sh -c "printf '\n127.0.0.1 $site_name.dev' >> /etc/hosts"
   sudo apachectl restart
   if [[ -d ~/.pow ]]; then
@@ -79,6 +94,7 @@ run ProxyApp.new" > 'config.ru'
 
 elif [[ "$1" == "unlink" ]]; then
   sudo rm "/private/etc/apache2/extra/vhosts/$site_name.dev.conf"
+  sudo rm "/Library/Server/Web/Config/apache2/sites/$site_name.dev.conf"
   sudo mv /etc/hosts /etc/hosts.bak
   sudo sh -c "sed '/127.0.0.1 $site_name.dev/d' /etc/hosts.bak > /etc/hosts"
   sudo apachectl restart
