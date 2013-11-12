@@ -82,6 +82,12 @@ if [[ -e "$p/secret" ]]; then
     cp -rf "$source" "$target"
   fi
 
+  for i in secret/_*
+  do
+    source="$p/$i"
+    target="$HOME/${i/secret\/_/.}"
+    link_file "$source" "$target"
+  done
 fi
 
 
