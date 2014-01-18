@@ -8,14 +8,17 @@ if [[ `uname` != "Darwin" ]]; then
   exit -1
 else
   sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak
-  sudo sh -c 'sed "s/#Include \/private\/etc\/apache2\/extra\/httpd-vhosts.conf/Include \/private\/etc\/apache2\/extra\/httpd-vhosts.conf/g" /etc/apache2/httpd.conf.bak > /etc/apache2/httpd.conf'
-  sudo sh -c 'sed "s/#LoadModule php5_module libexec\/apache2\/libphp5.so/LoadModule php5_module libexec\/apache2\/libphp5.so/g" /etc/apache2/httpd.conf.bak > /etc/apache2/httpd.conf'
+  sudo sh -c 'sed "s/#Include \/private\/etc\/apache2\/extra\/httpd-vhosts.conf/Include \/etc\/apache2\/extra\/httpd-vhosts.conf/g" /etc/apache2/httpd.conf.bak > /etc/apache2/httpd.conf.bak2'
+  sudo sh -c 'sed "s/#LoadModule php5_module libexec\/apache2\/libphp5.so/LoadModule php5_module libexec\/apache2\/libphp5.so/g" /etc/apache2/httpd.conf.bak2 > /etc/apache2/httpd.conf.bak3'
+  sudo sh -c 'tr "\n" ";" < /etc/apache2/httpd.conf.bak3 > /etc/apache2/httpd.conf.bak4'
+  sudo sh -c 'sed "s/Listen 80;;/Listen 80;Listen 8080;;/g" /etc/apache2/httpd.conf.bak4 > /etc/apache2/httpd.conf.bak5'
+  sudo sh -c 'tr ";" "\n" < /etc/apache2/httpd.conf.bak5 > /etc/apache2/httpd.conf'
   if [[ ! -d /etc/apache2/extra/vhosts ]]; then
     sudo mkdir -p /etc/apache2/extra/vhosts
     sudo mv /etc/apache2/extra/httpd-vhosts.conf /etc/apache2/extra/httpd-vhosts.conf.bak
-    sudo sh -c "sed '19a\
-,Listen 8080,NameVirtualHost *:8080,,Include /private/etc/apache2/extra/vhosts/*.conf,' /etc/apache2/extra/httpd-vhosts.conf.bak > /etc/apache2/extra/httpd-vhosts.conf.bak2"
-    sudo sh -c "cat /etc/apache2/extra/httpd-vhosts.conf.bak2 | tr ',' '\012' > /etc/apache2/extra/httpd-vhosts.conf"
+    sudo sh -c "sed 's/NameVirtualHost \*:80/NameVirtualHost \*:80;;Listen 8080;NameVirtualHost *:8080;;Include \/private\/etc\/apache2\/extra\/vhosts\/*.conf;/g' /etc/apache2/extra/httpd-vhosts.conf.bak > /etc/apache2/extra/httpd-vhosts.conf.bak2"
+   # sudo sh -c "cat /etc/apache2/extra/httpd-vhosts.conf.bak2 | tr ',' '\012' > /etc/apache2/extra/httpd-vhosts.conf"
+    sudo sh -c 'tr ";" "\n" < /etc/apache2/extra/httpd-vhosts.conf.bak2 > /etc/apache2/extra/httpd-vhosts.conf'
   fi
 fi
 
@@ -40,7 +43,8 @@ if [[ "$1" == "link" ]]; then
         Allow from all
     </Directory>
 </VirtualHost>' > /private/etc/apache2/extra/vhosts/$site_name.dev.conf"
-  sudo sh -c "printf '<VirtualHost *:80 *:8080>
+  if [[ -d /Library/Server/Web/Config/apache2/sites ]]; then
+    sudo sh -c "printf '<VirtualHost *:80 *:8080>
     ServerAdmin webmaster@$site_name.dev
     DocumentRoot \"$(pwd)\"
     ServerName $site_name.dev
@@ -55,6 +59,7 @@ if [[ "$1" == "link" ]]; then
         Allow from all
     </Directory>
 </VirtualHost>' > /Library/Server/Web/Config/apache2/sites/$site_name.dev.conf"  # For Server.app
+  fi
   sudo sh -c "printf '\n127.0.0.1 $site_name.dev' >> /etc/hosts"
   sudo apachectl restart
   if [[ -d ~/.pow ]]; then
@@ -94,7 +99,9 @@ run ProxyApp.new" > 'config.ru'
 
 elif [[ "$1" == "unlink" ]]; then
   sudo rm "/private/etc/apache2/extra/vhosts/$site_name.dev.conf"
-  sudo rm "/Library/Server/Web/Config/apache2/sites/$site_name.dev.conf"
+  if [[ -d /Library/Server/Web/Config/apache2/sites ]]; then
+    sudo rm "/Library/Server/Web/Config/apache2/sites/$site_name.dev.conf"
+  fi
   sudo mv /etc/hosts /etc/hosts.bak
   sudo sh -c "sed '/127.0.0.1 $site_name.dev/d' /etc/hosts.bak > /etc/hosts"
   sudo apachectl restart
