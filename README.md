@@ -34,10 +34,12 @@ git clone [private dotfiles repo] secret
 ./install
 ```
 
+**IMPORTANT: EXECUTE `dotfiles/install` ASAP TO REMOVE OTHERS' READ PERMISSION TO `secret`!**
+
 The Private Profiles Repository contains:
 * `secret/subl2`: Sublime Text 2 Settings
 * `secret/gitcfg`: gitcfg profiles
-* `secret/_*`: other files that should be placed as `~/.*`, e.g. `_ssh`->`~/.ssh`
+* `secret/_*`: other files that should be placed as `~/.*`, e.g. `_ssh`→`~/.ssh`
 
 ## Update
 
