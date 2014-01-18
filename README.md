@@ -37,6 +37,7 @@ git clone [private dotfiles repo] secret
 The Private Profiles Repository contains:
 * `secret/subl2`: Sublime Text 2 Settings
 * `secret/gitcfg`: gitcfg profiles
+* `secret/_*`: other files that should be placed as `~/.*`, e.g. `_ssh`->`~/.ssh`
 
 ## Update
 
