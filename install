@@ -58,6 +58,13 @@ cp -rf "$source" "$target"
 
 # Secret
 if [[ -e "$p/secret" ]]; then
+  echo "Chmod..."
+  chmod -R o-r "$p/secret"
+  chmod -R o-w "$p/secret"
+  chmod -R o-x "$p/secret"
+  chmod -R g-r "$p/secret"
+  chmod -R g-w "$p/secret"
+  chmod -R g-x "$p/secret"
   echo "Copying private profiles..."
 
   if [[ -e "$p/secret/subl2" ]]; then
