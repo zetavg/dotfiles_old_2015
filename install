@@ -39,6 +39,12 @@ do
 done
 
 
+# Profanity
+source="$p/profanity"
+target="$HOME/.config/profanity"
+link_file "$source" "$target"
+
+
 # Sublime Text 2
 source="$p/subl2"
 if [[ $(uname) == "Darwin" ]]; then
@@ -88,6 +94,14 @@ if [[ -e "$p/secret" ]]; then
     fi
     cp -rf "$source" "$target"
   fi
+
+  mkdir -p "$HOME/.local/share/profanity/"
+  source="$p/secret/profanity-data/accounts"
+  target="$HOME/.local/share/profanity/accounts"
+  if [[ -e "$target" ]]; then
+    mv -f "$target" "$target.$time_stamp.bak"
+  fi
+  link_file "$source" "$target"
 
   for i in secret/_*
   do
