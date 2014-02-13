@@ -1,14 +1,13 @@
 ####################################
-# neson's shell profile 2013-08-07 #
+# neson's shell profile 2014-02-14 #
 ####################################
 
-## Add `. "$HOME/.neson_profile"` to the main .profile or .bash_profile ##
+## Add `. "$HOME/.shell_profile"` to the main .profile or .bash_profile ##
 
 
 # PATH
 PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.bin/script:$PATH"
-PATH="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin:$PATH"
 
 
 # ALIAS
@@ -56,6 +55,7 @@ alias gs='git status'
 alias gsm='git status | more'
 
 alias st='subl'
+alias ss='subl'
 
 alias geeknote='python $HOME/.bin/geeknote/geeknote.py'
 alias gnsync='python $HOME/.bin/geeknote/gnsync.py'
