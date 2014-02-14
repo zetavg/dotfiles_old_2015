@@ -18,7 +18,7 @@ BetterTouchTool settings, Terminal profiles and other things are in `osx/`.
 ### Sublime Text 3
 
 * Install Package Control:
-  Press `` ctrl+` `` to open Sublime Text 2 console and paste the following command into it.
+  Press `` ctrl+` `` to open Sublime Text console and paste the following command into it.
 
 ```python
 import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
