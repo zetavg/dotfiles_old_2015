@@ -4,6 +4,8 @@
 		"BeautifyRuby",
 		"Browser Refresh",
 		"CoffeeScript",
+		"DashDoc",
+		"Emmet",
 		"Gist",
 		"Git",
 		"Github Tools",
@@ -17,8 +19,16 @@
 		"SCSS",
 		"SFTP",
 		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-csslint",
+		"SublimeLinter-haml",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeLinter-php",
+		"SublimeLinter-shellcheck",
 		"Theme - Soda",
-		"VintageEx",
-		"ZenCoding"
+		"VintageEx"
 	]
 }
