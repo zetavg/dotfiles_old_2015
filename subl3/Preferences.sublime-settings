@@ -15,9 +15,13 @@
 	"word_wrap": "true",
 	"scroll_past_end": true,
 	"open_files_in_new_window": false,
+	"show_encoding": true,
+	"always_show_minimap_viewport": true,
 
 	// Editing
 	"auto_indent": true,
+    "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
+    "auto_close_tags": true,
 
 	// Saving
 	"ensure_newline_at_eof_on_save": true,
