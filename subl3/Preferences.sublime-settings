@@ -5,7 +5,9 @@
 	"default_encoding": "UTF-8",
 
 	// Layout
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/User/Monokai Soda.tmTheme",
+	"theme": "Soda Grey 3.sublime-theme",
+	"soda_classic_tabs": true,
 	"font_face": "Consolas",
 	"font_size": 18.0,
 	"line_numbers": true,
