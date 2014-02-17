@@ -8,23 +8,24 @@ git clone https://github.com/Neson/dotfiles.git
 dotfiles/install
 ```
 The installation script will create symlink for all the dotfiles included.
-For Sublime Text 2, folder `subl2` will be copy to `Packages/User`.
-Old config files are automatically backup&replaced.
+For Sublime Text, folder `subl*` will be copy to `Packages/User`.
+Old config files will be automatically backup & replaced.
 
 ### OSX
 
 BetterTouchTool settings, Terminal profiles and other things are in `osx/`.
 
-### Sublime Text 2
+### Sublime Text 3
 
-* Install Package Control:
-  Press `` ctrl+` `` to open Sublime Text 2 console and paste the following command into it.
-
-```python
-import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
-```
+* Install Package Control: [https://sublime.wbond.net/installation](https://sublime.wbond.net/installation)
 
 * Install the fonts in `fonts/`
+
+* Install OS X command line tool - subl
+
+```bash
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+```
 
 ### Install Private Profiles
 
@@ -51,4 +52,4 @@ git pull
 
 ## 注意
 
-* Sublime Text 2 會自動刪去設定檔中的註解，因此若要更改 Settings 或 Key Bindings，請再 `install` 回有註解的版本後後立即更改，改完也要馬上 `cp` 回 `subl2/` 更新原始檔。
+* Sublime Text 會自動刪去設定檔中的註解，因此若要更改 Settings 或 Key Bindings，請再 `install` 回有註解的版本後後立即更改，改完也要馬上 `cp` 回 `subl2/` 更新原始檔。

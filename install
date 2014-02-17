@@ -55,10 +55,27 @@ else
   target="$HOME/.config/sublime-text-2/Packages/User"
 fi
 if [[ -e "$target" ]]; then
-  echo "Backing up old settings.."
+  echo "Backing up old settings for subl2 ..."
   mv -f "$target" "$target.$time_stamp.bak"
 fi
 echo "Restoring subl2 settings to $target"
+cp -rf "$source" "$target"
+
+
+# Sublime Text 3
+source="$p/subl3"
+if [[ $(uname) == "Darwin" ]]; then
+  test ! -e "$HOME/Library/Application Support/Sublime Text 3/Packages" && mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages"
+  target="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+else
+  test ! -e "$HOME/.config/sublime-text-3/Packages" && mkdir -p "$HOME/.config/sublime-text-3/Packages"
+  target="$HOME/.config/sublime-text-3/Packages/User"
+fi
+if [[ -e "$target" ]]; then
+  echo "Backing up old settings for subl3 ..."
+  mv -f "$target" "$target.$time_stamp.bak"
+fi
+echo "Restoring subl3 settings to $target"
 cp -rf "$source" "$target"
 
 
@@ -76,13 +93,25 @@ if [[ -e "$p/secret" ]]; then
   if [[ -e "$p/secret/subl2" ]]; then
     source="$p/secret/subl2/*"
       if [[ $(uname) == "Darwin" ]]; then
-        test ! -e "$HOME/Library/Application Support/Sublime Text 2/Packages" && mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages"
+        test ! -e "$HOME/Library/Application Support/Sublime Text 2/Packages" && mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
         target="$HOME/Library/Application Support/Sublime Text 2/Packages/User"
       else
-        test ! -e "$HOME/.config/sublime-text-2/Packages" && mkdir -p "$HOME/.config/sublime-text-2/Packages"
+        test ! -e "$HOME/.config/sublime-text-2/Packages" && mkdir -p "$HOME/.config/sublime-text-2/Packages/User"
         target="$HOME/.config/sublime-text-2/Packages/User"
       fi
-      cp -f "$source" "$target/"
+      cp -f $source "$target/"
+  fi
+
+  if [[ -e "$p/secret/subl3" ]]; then
+    source="$p/secret/subl3/*"
+      if [[ $(uname) == "Darwin" ]]; then
+        test ! -e "$HOME/Library/Application Support/Sublime Text 3/Packages" && mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+        target="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+      else
+        test ! -e "$HOME/.config/sublime-text-3/Packages" && mkdir -p "$HOME/.config/sublime-text-3/Packages/User"
+        target="$HOME/.config/sublime-text-3/Packages/User"
+      fi
+      cp -f $source "$target/"
   fi
 
   if [[ -e "$p/secret/gitcfg" ]]; then

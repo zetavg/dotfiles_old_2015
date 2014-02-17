@@ -1,0 +1,32 @@
+// Neson's Sublime Setting
+
+{
+	// Encoding
+	"default_encoding": "UTF-8",
+
+	// Layout
+	"color_scheme": "Packages/User/Monokai Soda.tmTheme",
+	"theme": "Soda Grey 3.sublime-theme",
+	"soda_classic_tabs": true,
+	"font_face": "Consolas",
+	"font_size": 18.0,
+	"line_numbers": true,
+	"highlight_line": false,
+	"word_wrap": "true",
+	"scroll_past_end": true,
+	"open_files_in_new_window": false,
+	"show_encoding": true,
+	"always_show_minimap_viewport": true,
+
+	// Editing
+	"auto_indent": true,
+    "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
+    "auto_close_tags": true,
+
+	// Saving
+	"ensure_newline_at_eof_on_save": true,
+	"trim_trailing_white_space_on_save": true,
+
+	// Packages
+	"ignored_packages": []
+}
