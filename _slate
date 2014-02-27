@@ -1,19 +1,78 @@
-# Focus Bindings
-bind l:cmd;shift    focus right
-bind h:cmd;shift     focus left
-bind k:cmd;shift       focus up
-bind j:cmd;shift     focus down
-bind m:cmd;shift   focus behind
+# # Config
+# config repeatOnHoldOps "resize,nudge"
+# config keyboardLayout "qwerty"
+# config windowHintsIgnoreHiddenWindows false
+# config windowHintsSpread true
 
-# Move/Resize Window
-bind j:cmd;shift;alt	move windowTopLeftX;windowTopLeftY+20 windowSizeX;windowSizeY
-bind k:cmd;shift;alt	move windowTopLeftX;windowTopLeftY-20 windowSizeX;windowSizeY
-bind h:cmd;shift;alt	move windowTopLeftX-20;windowTopLeftY windowSizeX;windowSizeY
-bind l:cmd;shift;alt	move windowTopLeftX+20;windowTopLeftY windowSizeX;windowSizeY
-bind m:cmd;shift;alt	move windowTopLeftX;windowTopLeftY windowSizeX;windowSizeY+26
-bind ,:cmd;shift;alt	move windowTopLeftX;windowTopLeftY windowSizeX;windowSizeY-26
-bind n:cmd;shift;alt	move windowTopLeftX;windowTopLeftY windowSizeX-26;windowSizeY
-bind .:cmd;shift;alt	move windowTopLeftX;windowTopLeftY windowSizeX+26;windowSizeY
+# Alias
+alias hyper cmd;shift
 
-# Window Hints
-bind esc:cmd hint
+# alias Chrome 'Google Chrome'
+# alias Terminal 'Terminal'
+# alias Terminal2 '終端機'
+# alias Subl 'Sublime Text'
+
+# alias top               push up                 bar-resize:screenSizeY/2
+# alias right             push right              bar-resize:screenSizeX/2
+# alias bottom            push down               bar-resize:screenSizeY/2
+# alias left              push left               bar-resize:screenSizeX/2
+# alias small-top         push up                 bar-resize:screenSizeY/3
+# alias small-right       push right              bar-resize:screenSizeX/3
+# alias small-bottom      push down               bar-resize:screenSizeY/3
+# alias small-left        push left               bar-resize:screenSizeX/3
+# alias big-top           push up                 bar-resize:2*screenSizeY/3
+# alias big-right         push right              bar-resize:2*screenSizeX/3
+# alias big-bottom        push down               bar-resize:2*screenSizeY/3
+# alias big-left          push left               bar-resize:2*screenSizeX/3
+# alias top-right         corner top-right        resize:screenSizeX/2;screenSizeY/2
+# alias bottom-right      corner bottom-right     resize:screenSizeX/2;screenSizeY/2
+# alias bottom-left       corner bottom-left      resize:screenSizeX/2;screenSizeY/2
+# alias top-left          corner top-left         resize:screenSizeX/2;screenSizeY/2
+
+
+# # Layout
+# layout myLayout ${Terminal} ${left}
+# layout myLayout ${Terminal2} ${left}
+# layout myLayout ${Subl} ${right}
+
+# # Layout Bindings
+# bind 7:${hyper};alt	layout myLayout
+
+# # Focus Bindings
+# bind l:${hyper}	focus right
+# bind h:${hyper}	focus left
+# bind k:${hyper}	focus up
+# bind j:${hyper}	focus down
+# bind m:${hyper}	focus behind
+
+# # Move/Resize Window
+# bind j:${hyper};alt	nudge +0 +20
+# bind k:${hyper};alt	nudge +0 -20
+# bind h:${hyper};alt	nudge -20 +0
+# bind l:${hyper};alt	nudge +20 +0
+
+# bind m:${hyper};alt	move windowTopLeftX;windowTopLeftY windowSizeX;windowSizeY+26
+# bind ,:${hyper};alt	move windowTopLeftX;windowTopLeftY windowSizeX;windowSizeY-26
+# bind n:${hyper};alt	move windowTopLeftX;windowTopLeftY windowSizeX-26;windowSizeY
+# bind .:${hyper};alt	move windowTopLeftX;windowTopLeftY windowSizeX+26;windowSizeY
+
+# bind [:${hyper};alt	${left}
+# bind ]:${hyper};alt	${right}
+
+# bind o:${hyper};alt	move screenOriginX+screenSizeX/10;screenOriginY+screenSizeY/10 screenSizeX*0.8;screenSizeY*0.8
+# bind 0:${hyper};alt	move screenSizeX/2-windowSizeX/2;screenSizeY/2-windowSizeY/2 windowSizeX;windowSizeY
+
+# bind p:${hyper};alt	throw next
+
+# bind ;:${hyper};alt	snapshot c save-to-disk
+# bind ;:${hyper}	activate-snapshot c
+
+# bind g:${hyper};alt	grid 0:4,4 1:4,4 2:4,4 3:4,4
+
+# bind u:${hyper};alt	undo
+
+# # Window Hints
+# bind esc:cmd hint JKHLUINMYOP
+
+# Relaunch
+bind r:${hyper};alt	relaunch
