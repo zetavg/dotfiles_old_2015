@@ -218,10 +218,10 @@ slate.bind('p:'+hyperKey+';'+optionKey, function(win) {
 		nextScreenID = 0;
 		nextScreen = slate.screenForRef(0);
 	}
-	x = win.topLeft().x * (nextScreen.rect().width/slate.screen().rect().width);
-	y = win.topLeft().y * (nextScreen.rect().height/slate.screen().rect().height);
-	width = win.size().width * (nextScreen.rect().width/slate.screen().rect().width);
-	height = win.size().height * (nextScreen.rect().height/slate.screen().rect().height);
+	x = win.topLeft().x * (nextScreen.visibleRect().width/slate.screen().visibleRect().width);
+	y = win.topLeft().y * (nextScreen.visibleRect().height/slate.screen().visibleRect().height);
+	width = win.size().width * (nextScreen.visibleRect().width/slate.screen().visibleRect().width);
+	height = win.size().height * (nextScreen.visibleRect().height/slate.screen().visibleRect().height);
 	var throwNextResize = slate.operation("move", {
 		"screen" : nextScreen,
 		"x" : x.toString(),
@@ -244,9 +244,50 @@ slate.bind('p:'+hyperKey+';'+optionKey, function(win) {
 	});
 }, false);
 slate.bind('g:'+hyperKey+';'+optionKey, grid44);
-
 // undo
 slate.bind('u:'+hyperKey+';'+optionKey, stepBack);
+
+/* Awesome */
+slate.bind('return:'+hyperKey, function(win) {
+	var s = slate.shell("/usr/bin/osascript -e 'tell app \"Terminal\" to do script \"zsh\" \n delay 0.3 \n tell app \"Terminal\" to activate'", true, '~/');
+	slate.log('shell' + s);
+});
+
+slate.bind('8:'+hyperKey+';'+optionKey, function(win) {
+	win.doOperation(logStep);
+	var winCount = 0;
+	slate.eachApp(function(app) {
+		app.eachWindow(function(win) {
+			if (!win.isMinimizedOrHidden() && win.title() != "" && win.screen().id() == slate.screen().id()) {
+				slate.log("[" + win.pid() + "] " + win.title());
+				winCount++;
+			}
+		});
+	});
+	var i = 0;
+	slate.eachApp(function(app) {
+		app.eachWindow(function(win) {
+			if (!win.isMinimizedOrHidden() && win.title() != "" && win.screen().id() == slate.screen().id()) {
+				if (i == 0) {
+					win.doOperation(pushLeft);
+				} else {
+					win.doOperation(pushRight);
+					win.resize({
+						"width" : "windowSizeX",
+						"height" : slate.screen().visibleRect().height/(winCount-1)
+					});
+					win.move({
+						"x" : "windowTopLeftX",
+						"y" : slate.screen().visibleRect().height/(winCount-1)*(i-1)+slate.screen().visibleRect().y
+					});
+				}
+				i++;
+			}
+		});
+	});
+});
+
+
 
 // Bind A Crazy Function to 8
 slate.bind('8:'+hyperKey+';'+optionKey, function(win) {
