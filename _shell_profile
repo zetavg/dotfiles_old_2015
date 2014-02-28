@@ -43,7 +43,12 @@ alias fbchat='screen -x fbchat'
 alias startscr='screen -S scr'
 alias startirc='screen -S irc irssi'
 alias startjob='screen -S job'
-alias startfbchat='screen -S fbchat profanity --account facebook'
+alias startfbchat='screen -S fbchat'
+fbchatinit() {
+  while true; do
+  profanity --account facebook
+  done
+}
 alias newwin='screen -X screen -t'
 alias roots='screen -X screen -t root 10 su'
 alias tops='screen -X screen -t top 9 top'

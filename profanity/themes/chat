@@ -2,9 +2,9 @@
 bkgnd=default
 titlebar=blue
 statusbar=blue
-titlebar.text=default
+titlebar.text=white
 titlebar.brackets=cyan
-statusbar.text=default
+statusbar.text=white
 statusbar.brackets=cyan
 statusbar.active=cyan
 statusbar.new=white
