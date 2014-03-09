@@ -23,8 +23,7 @@ hostname=$(hostname)
 backup_to="/tmp/"
 
 if [[ $(id -u) = 0 ]] ; then
-  echo "sysBackup: this script must run with root permissions. aborting."
-  return -1
+  echo "sysBackup: this script must run with root permissions."
 fi
 
 if [[ "$1" == "-o" ]]; then
@@ -32,7 +31,7 @@ if [[ "$1" == "-o" ]]; then
     backup_to="$2"
   else
     echo "sysBackup: no such directory: $2 . aborting."
-    return -1
+    exit -1
   fi
 fi
 
@@ -62,12 +61,12 @@ datetime=$(date "+%Y-%m-%d %H:%M:%S")
 echo "Backup job started at $datetime"
 
 ###############################################################################
-tar -cf "$backup_to/$hostname-$hostname-$date-full-backup.tar" / --totals --absolute-names \
+tar -cf "$backup_to/$hostname-$date-full-backup.tar" / --totals --absolute-names \
     --ignore-failed-read --exclude-from=/tmp/$rnd-sysBackup-exclude-file-list
 if [[ "${?}" != 0 ]] ; then
     echo "Backup failed."
     rm -f /tmp/$rnd-sysBackup-exclude-file-list
-    return -1
+    exit -1
 fi
 rm -f /tmp/$rnd-sysBackup-exclude-file-list
 ###############################################################################
@@ -87,13 +86,13 @@ echo "Compressing job started at $datetime"
 gzip --best --rsyncable "$backup_to/$hostname-$date-full-backup.tar"
 if [ "${?}" != 0 ] ; then
     echo "Gzip failed."
-    return -1
+    exit -1
 fi
 
 gzip --test "$backup_to/$hostname-$date-full-backup.tar.gz"
 if [ "${?}" != 0 ] ; then
     echo "Check the compressed file integrity failed."
-    return -1
+    exit -1
 fi
 ###############################################################################
 
