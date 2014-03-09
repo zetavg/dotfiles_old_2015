@@ -7,7 +7,7 @@
 # 1. Do a clean installation of the same linux distribution.
 # 2. Put the backup file under /tmp.
 # 3. execute
-#    tar -zx -P --preserve --exclude=/etc/fstab -f /mnt/backup/full-backup.tar.gz
+#    tar -zx -P --preserve-permissions --exclude=/etc/fstab -f /tmp/...full-backup.tar.gz
 #    with root permission.
 # 4. done. Make sure the grub/fstab/networking config are currect, then reboot.
 #
@@ -48,8 +48,13 @@ echo "/dev/*"               >> /tmp/$rnd-sysBackup-exclude-file-list
 echo "/sys/*"               >> /tmp/$rnd-sysBackup-exclude-file-list
 echo "/tmp/*"               >> /tmp/$rnd-sysBackup-exclude-file-list
 echo "/var/spool/squid/*"   >> /tmp/$rnd-sysBackup-exclude-file-list
+
+echo "/etc/etc/network/*"   >> /tmp/$rnd-sysBackup-exclude-file-list
 echo "/etc/fstab"           >> /tmp/$rnd-sysBackup-exclude-file-list
-echo "/etc/boot"            >> /tmp/$rnd-sysBackup-exclude-file-list
+echo "/etc/boot/*"          >> /tmp/$rnd-sysBackup-exclude-file-list
+echo "/boot/*"              >> /tmp/$rnd-sysBackup-exclude-file-list
+echo "/etc/grub.d/*"        >> /tmp/$rnd-sysBackup-exclude-file-list
+echo "/etc/default/grub/*"  >> /tmp/$rnd-sysBackup-exclude-file-list
 
 echo "done."
 echo ""
