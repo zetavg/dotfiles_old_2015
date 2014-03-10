@@ -12,7 +12,7 @@ echo 'run "startirc" to start irssi in a new screen, or type "irc" to open curre
 screen -X screen -t bash 1
 
 # ROOT
-screen -X screen -t root 10 su
+screen -X screen -t root 10 sudo su
 
 # TOP
 screen -X screen -t top 9 top
