@@ -90,13 +90,13 @@ alias mkbz='echo "no mkbz"'
 alias unbz='bzip2 -d'
 # tar.bz
 alias mktar.bz='echo "no mktar.bz"'
-alias untar.bz'tar jxvf'
+alias untar.bz='tar jxvf'
 # bz2
 alias dobz2='bzip2 -z'
 alias unbz2='bzip2 -d'
 # tar.bz2
 alias mktar.bz2='tar jcvf'
-alias untar.bz2'tar jxvf'
+alias untar.bz2='tar jxvf'
 # tgz
 alias mktgz='tar zcvf'
 alias untgz='tar zxvf'
