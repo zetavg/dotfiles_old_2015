@@ -70,13 +70,69 @@ alias pg8='ping 8.8.8.8'
 alias ptt='ssh bbsu@ptt.cc'
 
 
+# COMMANDS FOR COMPRESS AND DECOMPRESSESING
+# Usage:
+# mk* OutputFileName.* InputDirName
+# do* InputFileName
+# un* InputFileName.*
+#
+# tar
+alias mktar='tar cvf'
+alias untar='tar xvf'
+# gz
+alias dogz='gzip'
+alias ungz='gzip -d'
+# tar.gz
+alias mktar.gz='tar zcvf'
+alias untar.gz='tar zxvf'
+# bz
+alias mkbz='echo "no mkbz"'
+alias unbz='bzip2 -d'
+# tar.bz
+alias mktar.bz='echo "no mktar.bz"'
+alias untar.bz'tar jxvf'
+# bz2
+alias dobz2='bzip2 -z'
+alias unbz2='bzip2 -d'
+# tar.bz2
+alias mktar.bz2='tar jcvf'
+alias untar.bz2'tar jxvf'
+# tgz
+alias mktgz='tar zcvf'
+alias untgz='tar zxvf'
+# tar.tgz
+alias mktar.tgz='tar zcvf'
+alias untar.tgz='tar zxvf'
+# xz
+alias mkxz='xz -z'
+alias unxz='xz -d'
+# tar.xz
+alias mktar.xz='tar Jcvf'
+alias untar.xz='tar Jxvf'
+# Z
+alias doZ='compress'
+alias unZ='uncompress'
+# tar.Z
+alias mktar.Z='tar Zcvf'
+alias untar.Z='tar Zxvf'
+# 7z
+alias mk7z='7z a'
+alias un7z='7z x'
+# rar
+alias mkrar='rar'
+alias unrar='rar e'
+# lha
+alias mklha='lha -a'
+alias unlha='lha -e'
+
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
-# FUNCTION
+# FUNCTIONS
 function mkcd() {
   mkdir "$1"
   cd "$1"
