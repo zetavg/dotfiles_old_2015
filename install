@@ -71,12 +71,7 @@ else
   test ! -e "$HOME/.config/sublime-text-3/Packages" && mkdir -p "$HOME/.config/sublime-text-3/Packages"
   target="$HOME/.config/sublime-text-3/Packages/User"
 fi
-if [[ -e "$target" ]]; then
-  echo "Backing up old settings for subl3 ..."
-  mv -f "$target" "$target.$time_stamp.bak"
-fi
-echo "Restoring subl3 settings to $target"
-cp -rf "$source" "$target"
+link_file "$source" "$target"
 
 
 # Secret

@@ -1,0 +1,33 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/tmp/assemble"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/Projects/tmp/mymm"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/Projects/QtReversi"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/Projects/Qt_Ogre_Framework"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/Projects/anli-web"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/mnt/neson@dex.tw/sites/calender.neson.dex.tw"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Neson/Google 雲端硬碟/httrack"
+		}
+	]
+}

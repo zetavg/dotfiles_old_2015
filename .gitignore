@@ -1,3 +1,20 @@
 .DS_Store
 secret/
 _bin/subl
+.git_cache_meta
+
+_bin/_bin
+_irssi/_irssi
+_mutt/_mutt
+_vim/_vim
+_zsh/_zsh
+_vim/.netrwhist
+
+# Sublime Text
+subl*/Package Control.cache/
+subl*/Package Control.last-run
+subl*/Package Control.system-ca-bundle
+subl*/Package Control.system-ca-bundle
+subl*/Package Control.system-ca-bundle
+subl*/Package Control.system-ca-bundle
+subl*/Gist.sublime-settings

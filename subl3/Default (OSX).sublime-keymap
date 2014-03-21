@@ -11,10 +11,10 @@
 	{ "keys": ["command+shift+a"], "command": "browser_refresh", "args": { "auto_save": true, "delay": 1.0, "activate_browser": true, "browser_name" : "all" } },
 
 	/* 自動對 HTML 縮排 */
-	{ "keys": ["ctrl+shift+r"], "command": "reindent" , "args": {"single_line": false} },
+	{ "keys": ["ctrl+shift+r"], "command": "reindent" , "args": {"single_line": false} }//,
 
 	/* New File */
-	{ "keys": ["command+t"], "command": "new_file" },
+	//{ "keys": ["command+t"], "command": "new_file" },
 
 	/* Replace ⌘K with ⌘. */
 	/*{ "keys": ["super+.", "super+b"], "command": "toggle_side_bar" },
