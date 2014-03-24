@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include display-box;$0
+]]>
+  </content>
+  <tabTrigger>display-box</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

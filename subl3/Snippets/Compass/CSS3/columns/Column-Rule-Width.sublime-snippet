@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include column-rule-width(${1:unit});$0
+]]>
+  </content>
+  <tabTrigger>column-rule-width</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include background-image(url(${1:image})); ${2:// multiple: comma-delimited}$0
+]]>
+  </content>
+  <tabTrigger>background-image</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

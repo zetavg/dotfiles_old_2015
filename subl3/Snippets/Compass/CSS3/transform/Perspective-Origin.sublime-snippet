@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include perspective-origin(${1:x:unit} ${2:y:unit});$0
+]]>
+  </content>
+  <tabTrigger>transform (perspective-origin)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

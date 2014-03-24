@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include column-rule(${1:width:unit} ${2:style:solid||dashed||dotted} ${3:color});$0
+]]>
+  </content>
+  <tabTrigger>column-rule</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

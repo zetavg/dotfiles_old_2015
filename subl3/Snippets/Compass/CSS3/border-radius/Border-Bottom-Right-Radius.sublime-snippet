@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include border-bottom-right-radius(${1:unitless}px);$0
+]]>
+  </content>
+  <tabTrigger>border-radius (bottom-right)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include content("${1:value}");$0
+]]>
+  </content>
+  <tabTrigger>images (content)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

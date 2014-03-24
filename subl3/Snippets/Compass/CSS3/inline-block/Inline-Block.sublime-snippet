@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include inline-block(${1:alignment});$0
+]]>
+  </content>
+  <tabTrigger>inline-block</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

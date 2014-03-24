@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include background-with-css2-fallback(${1:url()||gradient-declaration}); ${2:// multiple: comma-delimited}$0
+]]>
+  </content>
+  <tabTrigger>background (with CSS2 Fallback)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

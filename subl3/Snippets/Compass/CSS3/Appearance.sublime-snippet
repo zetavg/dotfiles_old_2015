@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include appearance(${1:value});$0
+]]>
+  </content>
+  <tabTrigger>appearance</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

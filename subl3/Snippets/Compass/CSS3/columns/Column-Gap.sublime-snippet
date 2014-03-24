@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include column-gap(${1:unit});$0
+]]>
+  </content>
+  <tabTrigger>column-gap</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

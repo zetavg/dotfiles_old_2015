@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include columns(${1:width} ${2:count});$0
+]]>
+  </content>
+  <tabTrigger>columns</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

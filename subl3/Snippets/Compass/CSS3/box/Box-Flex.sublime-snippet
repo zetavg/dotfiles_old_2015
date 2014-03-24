@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include box-flex(${1:unitless});$0
+]]>
+  </content>
+  <tabTrigger>box-flex</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass, @include display-box</description>
+</snippet>

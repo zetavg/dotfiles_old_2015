@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include filter-gradient(${1:start-color}, ${2:end-color}, ${3:vertical||horizontal});$0
+]]>
+  </content>
+  <tabTrigger>images (filter-gradient)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

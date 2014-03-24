@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include list-style(${1:value});$0
+]]>
+  </content>
+  <tabTrigger>images (list-style)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

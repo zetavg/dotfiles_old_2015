@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include background-clip(${1:padding-box||border-box||text});$0
+]]>
+  </content>
+  <tabTrigger>background-clip</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include text-shadow(${1:shadow}); ${2:// multiple: comma-delimited}$0
+]]>
+  </content>
+  <tabTrigger>text-shadow</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include skew(${1:x:unitless}deg, ${2:y:unitless}deg, ${3:3D-only:true||false});$0
+]]>
+  </content>
+  <tabTrigger>transform (skew)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include border-image(${1:value});$0
+]]>
+  </content>
+  <tabTrigger>border-image</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

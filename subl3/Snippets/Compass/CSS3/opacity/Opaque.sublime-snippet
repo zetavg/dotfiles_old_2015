@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include opaque;$0
+]]>
+  </content>
+  <tabTrigger>opacity (opaque)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

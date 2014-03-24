@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include scale(${1:x:unitless}, ${2:y:unitless}, ${3:z:unitless}, ${4:3D-only:true||false});$0
+]]>
+  </content>
+  <tabTrigger>transform (scale)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

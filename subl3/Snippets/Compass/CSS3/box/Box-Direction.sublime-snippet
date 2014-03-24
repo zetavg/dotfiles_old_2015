@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include box-direction(${1:normal||reverse||inherit});$0
+]]>
+  </content>
+  <tabTrigger>box-direction</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass, @include display-box</description>
+</snippet>

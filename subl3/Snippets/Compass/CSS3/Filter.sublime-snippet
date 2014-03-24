@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include filter(${1:blur||brightness||contrast||grayscale||hue-rotate||invert||opacity||saturate||sepia}(${2:unitless}%)});$0
+]]>
+  </content>
+  <tabTrigger>filter</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

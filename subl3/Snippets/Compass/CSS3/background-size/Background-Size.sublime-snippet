@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include background-size(${1:auto||contain||cover||unit}); ${2:// multiple: comma-delimited}$0
+]]>
+  </content>
+  <tabTrigger>background-size</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

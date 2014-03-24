@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include border-corner-radius(${1:top||bottom},${2:left||right},${3:unitless}px);$0
+]]>
+  </content>
+  <tabTrigger>border-radius (corner)</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[
+@include box-ordinal-group(${1:unitless});$0
+]]>
+  </content>
+  <tabTrigger>box-ordinal-group</tabTrigger>
+  <scope>source.sass, source.scss</scope>
+  <description>Compass, @include display-box</description>
+</snippet>
