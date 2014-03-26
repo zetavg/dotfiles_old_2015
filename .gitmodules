@@ -10,3 +10,9 @@
 [submodule "_bin/geeknote"]
 	path = _bin/geeknote
 	url = git://github.com/VitaliyRodnenko/geeknote.git
+[submodule "fonts/monaco-powerline-vim"]
+	path = fonts/monaco-powerline-vim
+	url = https://github.com/fromonesrc/monaco-powerline-vim.git
+[submodule "fonts/consolas-powerline-vim"]
+	path = fonts/consolas-powerline-vim
+	url = https://github.com/eugeneching/consolas-powerline-vim.git
