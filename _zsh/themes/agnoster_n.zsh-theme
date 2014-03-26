@@ -165,8 +165,8 @@ function rprompt_git_status() {
         echo -n 'Git:'
         FILECHANGE=$(git diff --shortstat | grep -o -e "[^ ]* file" | sed "s/ file//g")
         echo -n "$FILECHANGE"
-        INSERTIONS=$(git diff --shortstat | grep -o -e "[^ ]* insertions" | sed "s/ insertions//g")
-        DELETIONS=$(git diff --shortstat | grep -o -e "[^ ]* deletions" | sed "s/ deletions//g")
+        INSERTIONS=$(git diff --shortstat | grep -o -e "[^ ]* insertion" | sed "s/ insertion//g")
+        DELETIONS=$(git diff --shortstat | grep -o -e "[^ ]* deletion" | sed "s/ deletion//g")
         [[ ! -n $INSERTIONS ]] && INSERTIONS='0'
         [[ ! -n $DELETIONS ]] && DELETIONS='0'
         INSERTIONS_ORG="$INSERTIONS"
@@ -179,12 +179,12 @@ function rprompt_git_status() {
         [[ $(($INSERTIONS < 1)) -eq 1 && $(($INSERTIONS_ORG > 0)) -eq 1 ]] && INSERTIONS='1'
         [[ $(($DELETIONS < 1)) -eq 1 && $(($DELETIONS_ORG > 0)) -eq 1 ]] && DELETIONS='1'
         if [[ $(($INSERTIONS > 0)) -eq 1 ]]; then
-          for i in {0..$INSERTIONS}; do
+          for i in {1..$INSERTIONS}; do
               echo -n "%{%F{green}%}▣%{%f%}"
           done
         fi
         if [[ $(($DELETIONS > 0)) -eq 1 ]]; then
-          for i in {0..DELETIONS}; do
+          for i in {1..$DELETIONS}; do
               echo -n "%{%F{red}%}▣%{%f%}"
           done
         fi
