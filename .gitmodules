@@ -16,3 +16,6 @@
 [submodule "fonts/consolas-powerline-vim"]
 	path = fonts/consolas-powerline-vim
 	url = https://github.com/eugeneching/consolas-powerline-vim.git
+[submodule "_zsh/plugins/zsh-syntax-highlighting"]
+	path = _zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
