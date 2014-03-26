@@ -126,10 +126,9 @@ alias mklha='lha -a'
 alias unlha='lha -e'
 
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# DEFAULT
+DEFAULT_NVM='0.10.26'
+DEFAULT_RVM='2.0.0-p451'
 
 
 # FUNCTIONS
