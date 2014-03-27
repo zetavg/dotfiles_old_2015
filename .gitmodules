@@ -19,3 +19,15 @@
 [submodule "_zsh/plugins/zsh-syntax-highlighting"]
 	path = _zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "_zsh/plugins/zsh-history-substring-search"]
+	path = _zsh/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "fonts/dejavu-sans-mono-powerline"]
+	path = fonts/dejavu-sans-mono-powerline
+	url = https://github.com/bcbcarl/dejavu-sans-mono-powerline.git
+[submodule "fonts/terminus-bold-powerline"]
+	path = fonts/terminus-bold-powerline
+	url = https://github.com/lharding/terminus-bold-powerline.git
+[submodule "_zsh/plugins/zaw"]
+	path = _zsh/plugins/zaw
+	url = https://github.com/zsh-users/zaw.git
