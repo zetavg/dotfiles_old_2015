@@ -1,5 +1,5 @@
 ####################################
-# neson's shell profile 2014-02-14 #
+# neson's shell profile 2014-03-27 #
 ####################################
 
 ## Add `. "$HOME/.shell_profile"` to the main .profile or .bash_profile ##
@@ -8,6 +8,14 @@
 # PATH
 PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.bin/script:$PATH"
+
+
+# LOAD CONFIG SCRIPT
+if type "git" > /dev/null 2> /dev/null; then
+  if type "git_config" > /dev/null 2> /dev/null; then
+    git_config
+  fi
+fi
 
 
 # ALIAS

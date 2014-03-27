@@ -6,7 +6,7 @@
 #
 
 if [[ "$1" == "" ]]; then
-	echo "usage: gitcfg [profile name]"
+	echo "usage: gitcfg profile_name"
 	exit -1
 fi
 
@@ -24,3 +24,9 @@ fi
 
 echo "Setting git configuration to $1"
 ln -f -s "$HOME/.config/gitcfg/$1.gitconfig" "$HOME/.gitconfig"
+
+
+if type "git_config" > /dev/null 2> /dev/null; then
+	echo "Running git_config script"
+	git_config
+fi
