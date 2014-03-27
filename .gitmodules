@@ -1,6 +1,7 @@
 [submodule "_oh-my-zsh"]
 	path = _oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+	ignore = dirty
 [submodule "_vim/bundle/vim-powerline"]
 	path = _vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
@@ -25,9 +26,11 @@
 [submodule "fonts/dejavu-sans-mono-powerline"]
 	path = fonts/dejavu-sans-mono-powerline
 	url = https://github.com/bcbcarl/dejavu-sans-mono-powerline.git
+	ignore = dirty
 [submodule "fonts/terminus-bold-powerline"]
 	path = fonts/terminus-bold-powerline
 	url = https://github.com/lharding/terminus-bold-powerline.git
+	ignore = dirty
 [submodule "_zsh/plugins/zaw"]
 	path = _zsh/plugins/zaw
 	url = https://github.com/zsh-users/zaw.git
