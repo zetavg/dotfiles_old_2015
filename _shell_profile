@@ -66,6 +66,7 @@ alias zshs='screen -X screen -t zsh zsh'
 alias vis='screen -X screen -t vim vim'
 
 alias gs='git status'
+alias gss='git status --short --branch'
 alias gsm='git status | more'
 
 alias st='subl'
