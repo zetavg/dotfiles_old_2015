@@ -179,7 +179,7 @@ prompt_dir() {
   T=$PWD
   I=$(echo "$T" | grep -o '/' | wc -l | sed 's/ //g')
   OTHER_PROMPT="$GIT_BRANCH................."
-  [[ $MOBILE = true ]] && L_BUILT_PROMPT='' && OTHER_PROMPT=''
+  [[ $MOBILE = true ]] && L_BUILT_PROMPT='' && OTHER_PROMPT='.....'
   if [[ $(expr "$(expr ${#L_BUILT_PROMPT} + ${#T} + ${#OTHER_PROMPT}) < $SCREEN_WIDTH") -eq 0 ]]; then
     T=$(echo "$T" | sed 's/\/[^\/]*\//\/...\//2')
     while [[ $(expr "$(expr ${#L_BUILT_PROMPT} + ${#T} + ${#OTHER_PROMPT}) < $SCREEN_WIDTH") -eq 0 && $(expr "$I > 1" ) -eq 1 ]]; do
@@ -295,8 +295,8 @@ function rprompt_git_status() {
           done
         fi
         LAST_COMMIT_TIME=$(echo $LAST_COMMIT_TIME | sed 's/ ../&@/' | sed 's/@.*//' | sed 's/ //')
-        L_BUILT_RPROMPT="$L_BUILT_RPROMPT%{$FG[008]%} ($LAST_COMMIT_TIME)"
-        echo -n "%{$FG[008]%} ($LAST_COMMIT_TIME)"
+        [[ ! $MOBILE = true ]] && L_BUILT_RPROMPT="$L_BUILT_RPROMPT%{$FG[008]%} ($LAST_COMMIT_TIME)"
+        [[ ! $MOBILE = true ]] &&echo -n "%{$FG[008]%} ($LAST_COMMIT_TIME)"
       elif [[ $GIT_HAS_COMMIT = true ]]; then
         COMMIT_NAME=$(git rev-parse HEAD | cut -c1-7)
         if [[ -n $L_BUILT_RPROMPT ]] && L_BUILT_RPROMPT="$L_BUILT_RPROMPT " && echo -n ' '
