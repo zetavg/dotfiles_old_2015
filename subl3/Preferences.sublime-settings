@@ -10,7 +10,9 @@
 	"highlight_line": false,
 	"ignored_packages":
 	[
-		"HTML5"
+		"SublimeCodeIntel",
+		"HTML5",
+		"LiveReload"
 	],
 	"line_numbers": true,
 	"open_files_in_new_window": false,
