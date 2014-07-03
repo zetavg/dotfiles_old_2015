@@ -137,7 +137,7 @@ alias unlha='lha -e'
 
 # DEFAULT
 DEFAULT_NVM='0.10.26'
-DEFAULT_RVM='2.0.0-p451'
+DEFAULT_RVM='2.0.0-p481'
 
 
 # FUNCTIONS
