@@ -25,7 +25,7 @@ function LMOTD() {
   if [[ $(( $S_WIDTH >= 74 )) = 1 ]]; then
     LMOTD_DATE=$(date)
     LMOTD_DATE_C=${#LMOTD_DATE}
-    LMOTD_DATE_FWC=$(echo $LMOTD_DATE | grep -o [年月日周時分秒一二三四五六日] | wc -l | sed 's/ //g')
+    LMOTD_DATE_FWC=$(echo $LMOTD_DATE | grep -s -q -o [年月日周時分秒一二三四五六日] | wc -l | sed 's/ //g')  &> /dev/null
     LMOTD_DATE_C=$(($LMOTD_DATE_C + $LMOTD_DATE_FWC))
     LMOTD_DATE_BC=$((43 - $LMOTD_DATE_C))
     LMOTD_DATE_B=' '
@@ -39,6 +39,7 @@ function LMOTD() {
 }
 
 LMOTD
+
 echo ""
 
 # zsh syntax highlighting
@@ -207,5 +208,3 @@ if [[ -n $ZSH_HIGHLIGHT_HIGHLIGHTERS ]]; then
 
   ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 fi
-
-
