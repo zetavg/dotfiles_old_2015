@@ -1,9 +1,0 @@
-#! /bin/bash
-
-target="$(dirname $0)/other/neson.gitconfig"
-
-source="$HOME/.config/gitcfg/neson.gitconfig"
-
-echo "Copying from $source to $target"
-
-cp -rf "$source" "$target"
