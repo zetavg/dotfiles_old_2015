@@ -187,13 +187,26 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Strings, Inherited Class</string>
+			<string>Strings</string>
 			<key>scope</key>
-			<string>string, constant.other.symbol, entity.other.inherited-class</string>
+			<string>string, constant.other.symbol</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#a3be8c</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Inherited Class</string>
+			<key>scope</key>
+			<string>entity.other.inherited-class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#a3be8c</string>
+				<key>fontStyle</key>
+				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -526,36 +539,36 @@
 			</dict>
 		</dict>
 	<dict>
-            <key>name</key>
-            <string>SublimeLinter Warning</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.warning</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#DDB700</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Gutter Mark</string>
-            <key>scope</key>
-            <string>sublimelinter.gutter-mark</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#FFFFFF</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Error</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.error</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#D02000</string>
-            </dict>
-        </dict></array>
+						<key>name</key>
+						<string>SublimeLinter Warning</string>
+						<key>scope</key>
+						<string>sublimelinter.mark.warning</string>
+						<key>settings</key>
+						<dict>
+								<key>foreground</key>
+								<string>#DDB700</string>
+						</dict>
+				</dict><dict>
+						<key>name</key>
+						<string>SublimeLinter Gutter Mark</string>
+						<key>scope</key>
+						<string>sublimelinter.gutter-mark</string>
+						<key>settings</key>
+						<dict>
+								<key>foreground</key>
+								<string>#FFFFFF</string>
+						</dict>
+				</dict><dict>
+						<key>name</key>
+						<string>SublimeLinter Error</string>
+						<key>scope</key>
+						<string>sublimelinter.mark.error</string>
+						<key>settings</key>
+						<dict>
+								<key>foreground</key>
+								<string>#D02000</string>
+						</dict>
+				</dict></array>
 	<key>uuid</key>
 	<string>59c1e2f2-7b41-46f9-91f2-1b4c6f5866f7</string>
 </dict>
