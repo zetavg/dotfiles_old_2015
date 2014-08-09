@@ -1,10 +1,10 @@
 <snippet>
   <content>
     <![CDATA[
-@include translateX(${1:unit}, ${2:perspective:true||false}, ${3:3D-only:true||false});$0
+@include background-image(radial-gradient(${1:#000 10%}, ${2:#000 10%, ...}));
 ]]>
   </content>
-  <tabTrigger>transform (translateX)</tabTrigger>
+  <tabTrigger>radial-gradient</tabTrigger>
   <scope>source.sass, source.scss</scope>
   <description>Compass</description>
 </snippet>
