@@ -7,12 +7,10 @@ _vim/.netrwhist
 _oh-my-zsh
 
 # Sublime Text
-subl*/Package Control.cache/
+subl*/*.cache
 subl*/Package Control.last-run
-subl*/Package Control.system-ca-bundle
-subl*/Package Control.system-ca-bundle
-subl*/Package Control.system-ca-bundle
 subl*/Package Control.system-ca-bundle
 subl*/Gist.sublime-settings
 subl*/Side Bar Folders.sublime-settings
 subl*/Side Bar Folders/
+subl*/.SublimeREPLHistory
