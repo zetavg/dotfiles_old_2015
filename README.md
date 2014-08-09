@@ -7,9 +7,7 @@ Neson's dotfiles
 git clone https://github.com/Neson/dotfiles.git
 dotfiles/install
 ```
-The installation script will create symlink for all the dotfiles included.
-For Sublime Text, folder `subl*` will be copy to `Packages/User`.
-Old config files will be automatically backup & replaced.
+The installation script will create symlinks to the cloned repository for all the dotfiles included (e.g.`~/.profile`→`_profile`), old ones will be automatically backup as `.bak` & replaced.
 
 ### OSX
 
@@ -38,7 +36,7 @@ git clone [private dotfiles repo] secret
 **IMPORTANT: EXECUTE `dotfiles/install` ASAP TO REMOVE OTHERS' READ PERMISSION TO `secret`!**
 
 The Private Profiles Repository contains:
-* `secret/subl2`: Sublime Text 2 Settings
+* `secret/subl2`: Sublime Text 2 Settings that includes secret keys, passowrds, etc.
 * `secret/gitcfg`: gitcfg profiles
 * `secret/_*`: other files that should be placed as `~/.*`, e.g. `_ssh`→`~/.ssh`
 
@@ -49,7 +47,3 @@ The Private Profiles Repository contains:
 git pull
 ./install
 ```
-
-## 注意
-
-* Sublime Text 會自動刪去設定檔中的註解，因此若要更改 Settings 或 Key Bindings，請再 `install` 回有註解的版本後後立即更改，改完也要馬上 `cp` 回 `subl2/` 更新原始檔。
