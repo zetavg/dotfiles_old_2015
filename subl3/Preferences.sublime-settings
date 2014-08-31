@@ -17,6 +17,8 @@
 		"*.swf",
 		"*.jar",
 		"*.zip",
+		"*.scssc",
+		"*.cssc",
 		"*/bower_components/*",
 		"*/node_modules/*"
 	],
