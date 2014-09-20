@@ -76,6 +76,10 @@ alias gsm='git status | more'
 alias st='subl'
 alias ss='subl'
 
+alias trr='touch tmp/restart.txt'
+alias ttr='touch tmp/restart.txt'
+alias tdl='tail -f log/development.log'
+
 alias geeknote='python $HOME/.bin/geeknote/geeknote.py'
 alias gnsync='python $HOME/.bin/geeknote/gnsync.py'
 

@@ -33,9 +33,9 @@
 	"highlight_line": false,
 	"ignored_packages":
 	[
-		"BracketHighlighter",
+		"HTML5",
 		"LiveReload",
-		"HTML5"
+		"BracketHighlighter"
 	],
 	"line_numbers": true,
 	"line_padding_bottom": 3,
