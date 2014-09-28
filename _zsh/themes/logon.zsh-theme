@@ -8,27 +8,32 @@
 #
 # ## README
 #
+# This is a theme created for
+# [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+#
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
+# For [NVM](https://github.com/creationix/nvm) (node.js version)
+# and [RVM](http://rvm.io/) (ruby version) display,
+# plugins nvm or rvm must be enabled.
 #
 # In addition, I recommend the
-# [Solarized theme](https://github.com/altercation/solarized/) and, if you're
-# using it on Mac OS X, [iTerm 2](http://www.iterm2.com/) over Terminal.app -
-# it has significantly better color fidelity.
+# [Solarized theme](https://github.com/altercation/solarized/).
 #
 # ## Features
 #
 # Only shows you *relevant* information about:
-# * Basicily: username@hostname, working directory and the current time.
+# * Basicily: `username@hostname`, working directory and the current time
 # * Git
 #   - the branch/ref you're on, is it dirty?
-#   - your user.name
+#   - your `user.name`
 #   - GitHub-like visualized diff status
 #   - what time is the commit made?
 # * RVM: current ruby version
 # * NVM: current node version
 # * Are there background jobs running? Did the last call exited with an error?
 #   Am I root?
+#
 # With Responsive Design. XD.
 #
 # [1]: https://gist.github.com/3712874
