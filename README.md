@@ -9,6 +9,10 @@ dotfiles/install
 ```
 The installation script will create symlinks to the cloned repository for all the dotfiles included (e.g.`~/.profile`→`_profile`), old ones will be automatically backup as `.bak` & replaced.
 
+### Shell
+
+The file `~/.profile_after_initialized` will be sourced if exists. Place enviroment specific startup scripts (e.g. rvm, nvm) in this file.
+
 ### OSX
 
 BetterTouchTool settings, Terminal profiles and other things are in `osx/`.

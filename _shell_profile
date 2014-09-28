@@ -1,13 +1,14 @@
 ####################################
-# neson's shell profile 2014-03-27 #
+# neson's shell profile 2014-09-28 #
 ####################################
 
 ## Add `. "$HOME/.shell_profile"` to the main .profile or .bash_profile ##
 
-# Add RVM to PATH for scripting
-if [[ -d "$HOME/.rvm/bin" ]]; then
-  export PATH="$PATH:$HOME/.rvm/bin"
-fi
+
+# SET DEFAULT CONSTANTS
+DEFAULT_NVM='0.10.32'
+DEFAULT_RVM='2.0.0-p481'
+
 
 # PATH
 PATH="$HOME/.bin:$PATH"
@@ -143,11 +144,6 @@ alias mklha='lha -a'
 alias unlha='lha -e'
 
 
-# DEFAULT
-DEFAULT_NVM='0.10.26'
-DEFAULT_RVM='2.0.0-p481'
-
-
 # FUNCTIONS
 function mkcd() {
   mkdir "$1"
@@ -186,4 +182,7 @@ fi
 # OTHER
 if [ -f "$HOME/.profile_other" ]; then
   . "$HOME/.profile_other"
+fi
+if [ -f "$HOME/.profile_after_initialized" ]; then
+  . "$HOME/.profile_after_initialized"
 fi

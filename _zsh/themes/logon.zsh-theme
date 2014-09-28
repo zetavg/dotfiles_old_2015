@@ -100,7 +100,7 @@ prompt_end() {
 }
 
 ### Prompt components
-# Each component will draw itself, and hide itself if no information needs to be shown
+# Each component will draw itself or hide itself if no information needs to be shown
 
 # Find and simplify the computer name if running OS X (Darwin)
 # "MacBook Pro" will display as "MBP" and "MacBook Air" will display as "MBA",
@@ -109,7 +109,7 @@ if [[ $(uname) == "Darwin" ]]; then
   MAC_COMPUTERNAME=$(scutil --get ComputerName | sed "s/MacBook Pro[ ]*/MBP/g" | sed "s/MacBook Air[ ]*/MBA/g" | sed "s/ 的 /'s /g" | sed "s/${USER}'s //g" | sed "s/ /_/g")
 fi
 
-# Get some variables that can be used bt everyone
+# Get some variables that can be used by everyone
 prompt_prebuld() {
   SCREEN_WIDTH=$(tput cols)
   if [[ $(( $SCREEN_WIDTH < 50 )) = 1 ]] && MOBILE=true
@@ -224,7 +224,7 @@ prompt_date() {
   fi
 }
 
-## Main prompt
+## The Main prompt
 build_prompt() {
   RETVAL=$?
   L_BUILT_PROMPT=''
@@ -252,7 +252,7 @@ PROMPT='
 %{%f%b%k%}$(build_prompt)
  %(!.#.$) '
 
-### The right prompt
+### The Right Prompt
 
 function rprompt_git_status() {
   if [[ $L_DISPLAY_GIT_STATUS = true ]]; then
