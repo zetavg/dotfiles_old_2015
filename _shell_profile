@@ -1,5 +1,5 @@
 ####################################
-# neson's shell profile 2014-09-28 #
+# neson's shell profile 2014-10-03 #
 ####################################
 
 ## Add `. "$HOME/.shell_profile"` to the main .profile or .bash_profile ##
@@ -13,6 +13,8 @@ DEFAULT_RVM='2.0.0-p576'
 # PATH
 PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.bin/script:$PATH"
+PATH="$HOME/.sbin:$PATH"
+PATH="$HOME/.sbin/script:$PATH"
 
 
 # LOAD CONFIG SCRIPT
