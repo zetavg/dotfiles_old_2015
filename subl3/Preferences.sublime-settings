@@ -34,8 +34,8 @@
 	"ignored_packages":
 	[
 		"LiveReload",
-		"HTML5",
-		"BracketHighlighter"
+		"BracketHighlighter",
+		"HTML5"
 	],
 	"line_numbers": true,
 	"line_padding_bottom": 3,
