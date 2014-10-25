@@ -42,7 +42,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(battery brew bundler cake cloudapp coffee colorize cp debian encode64 fasd forklift gem git git-extras git-flow gitignore gnu-utils go golang heroku history jruby mosh node npm nvm osx perl pip pow powder powify pyenv pylint python rails rake rand-quote rsync ruby rvm screen sudo svn terminalapp urltools wd web-search yum zsh-syntax-highlighting)
+plugins=(battery brew bundler cake cloudapp coffee colorize cp debian encode64 fasd forklift gem git git-extras git-flow gitignore gnu-utils go golang heroku history jruby mosh node npm nvm osx perl pip pow powder powify pyenv pylint python rails rake rand-quote rsync ruby rvm python pyenv django screen sudo svn terminalapp urltools wd web-search yum zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -34,6 +34,9 @@
 	"ignored_packages":
 	[
 		"LiveReload",
+		"LaTeXTools",
+		"Ruby Debugger",
+		"Origami",
 		"BracketHighlighter",
 		"HTML5"
 	],

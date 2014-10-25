@@ -153,13 +153,13 @@ function mkcd() {
 }
 
 function scd() {
-  echo $(pwd) > $HOME/.scd_$1
+  echo "$(pwd)" > $HOME/.scd_$1
 }
 function rcd() {
-  [[ -s "$HOME/.scd_$1" ]] && cd $(cat $HOME/.scd_$1)
+  [[ -s "$HOME/.scd_$1" ]] && cd "$(cat $HOME/.scd_$1)"
 }
 function cscd() {
-  rm $HOME/.scd_*
+  rm "$HOME/.scd_*"
 }
 
 
