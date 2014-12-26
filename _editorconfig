@@ -16,8 +16,16 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
-# 4 space indentation for python
+# 4 space indentation for Python and Java
 [**.py]
+indent_style = space
+indent_size = 4
+
+[**.java]
+indent_style = space
+indent_size = 4
+
+[**.groovy]
 indent_style = space
 indent_size = 4
 
@@ -33,7 +41,7 @@ indent_size = 4
 tab_size = 4
 
 [**.json]
-indent_style = tab
+indent_style = space
 indent_size = 4
 tab_size = 4
 
@@ -58,4 +66,10 @@ trim_trailing_whitespace = false
 trim_trailing_whitespace = false
 
 [**.erb]
+trim_trailing_whitespace = false
+
+# 4 space indentation and don't trim trailing whitespace for API Blueprint
+[**.apib]
+indent_style = space
+indent_size = 4
 trim_trailing_whitespace = false

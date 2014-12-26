@@ -1,9 +1,18 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
 	"installed_packages":
 	[
 		"3024 Color Scheme",
 		"AdvancedNewFile",
 		"AngularJS",
+		"API Blueprint",
 		"ApplySyntax",
 		"auto-save",
 		"AutoBackups",
@@ -16,7 +25,7 @@
 		"CoffeeScript",
 		"ColorPicker",
 		"Compass",
-		"CSScomb JS",
+		"CSScomb",
 		"DashDoc",
 		"Delete Current File",
 		"Djaneiro",
@@ -30,6 +39,7 @@
 		"FakeImg.pl Image Placeholder Snippet",
 		"FileSystem Autocompletion",
 		"Floobits",
+		"GhostText",
 		"Gist",
 		"Git",
 		"GitGutter",
@@ -87,6 +97,7 @@
 		"SublimeLinter-jshint",
 		"SublimeLinter-json",
 		"SublimeLinter-php",
+		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
 		"SublimeREPL",
 		"Theme - Soda",
