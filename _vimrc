@@ -26,7 +26,7 @@ hi LineNr cterm=none ctermfg=darkgrey ctermbg=236
 
 
 " Powerline
-set nocompatible 
+set nocompatible
 set laststatus=2
 "let g:Powerline_colorscheme='solarized256'
 "let g:Powerline_symbols = 'fancy'

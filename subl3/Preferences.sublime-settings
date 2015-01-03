@@ -33,12 +33,22 @@
 	"highlight_line": false,
 	"ignored_packages":
 	[
-		"LiveReload",
+		"ScopeHunter",
 		"LaTeXTools",
-		"Ruby Debugger",
+		"Slate",
+		"HTML5",
 		"Origami",
+		"FakeImg.pl Image Placeholder Snippet",
 		"BracketHighlighter",
-		"HTML5"
+		"Django Click",
+		"LiveReload",
+		"EasyMotion",
+		"Cheat Sheets",
+		"Djaneiro",
+		"DocBlockr",
+		"Placeholders",
+		"SublimeREPL",
+		"SFTP"
 	],
 	"line_numbers": true,
 	"line_padding_bottom": 3,

@@ -91,7 +91,6 @@
 		"STProjectMaker",
 		"SublimeLinter",
 		"SublimeLinter-contrib-scss-lint",
-		"SublimeLinter-csslint",
 		"SublimeLinter-haml",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-jshint",
