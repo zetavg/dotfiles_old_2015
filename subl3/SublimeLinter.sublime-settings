@@ -54,7 +54,7 @@
             "scss": {
                 "@disable": false,
                 "args": [
-                    "-xSpaceAfterComma,Indentation"
+                    "--config=${home}/.scss-lint.yml"
                 ],
                 "exclude-linter": "",
                 "excludes": [],

@@ -1,0 +1,9 @@
+linters:
+  SpaceAfterComma:
+    enabled: false
+
+  Indentation:
+    enabled: false
+
+  PropertySortOrder:
+    order: smacss
